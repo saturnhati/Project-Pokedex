@@ -1,9 +1,11 @@
-<div *ngFor="let pokemon of pokemons" class="card" style="width: 18rem">
-  <div class="card-body">
-    <h5 class="card-title">{{pokemon}}</h5>
-    <p class="card-text">
-      With supporting text below as a natural lead-in to additional content.
-    </p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+<div class="d-flex flex-wrap gap-3">
+  <div *ngFor="let pokemon of pokemons" class="card" style="width: 12rem">
+    <div class="card-body text-center">
+      <img src="{{ pokemon.image }}" />
+      <h5 class="card-title">{{pokemon.name | titlecase }}</h5>
+      <a class="btn btn-danger" [routerLink]="['/pokemon', pokemon.id]"
+        >Infos</a
+      >
+    </div>
   </div>
 </div>

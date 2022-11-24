@@ -1,0 +1,21 @@
+<div *ngIf="pokemonDetails !== undefined" class="container my-4">
+  <i class="bi bi-arrow-left-circle-fill fs-1 float-left"></i>
+  <img
+    width="250px"
+    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{pokemonDetails.id}}.png"
+  />
+  <h1>#{{ pokemonDetails.id }} {{ pokemonDetails.name | titlecase }}</h1>
+  <h4>Type:</h4>
+  <p>
+    <span *ngFor="let item of pokemonDetails.types"
+      >{{ item['type'].name }}&nbsp;</span
+    >
+  </p>
+  <h4>Sprites:</h4>
+  <img
+    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemonDetails.id}}.png"
+  />
+  <img
+    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/{{pokemonDetails.id}}.png"
+  />
+</div>

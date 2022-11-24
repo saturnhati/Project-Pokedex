@@ -9,18 +9,9 @@ import { HeaderComponent } from './header/header.component';
 import { GenModule } from './gen/gen.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomePage,
-    HeaderComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgbModule,
-    GenModule
-  ],
+  declarations: [AppComponent, HomePage, HeaderComponent],
+  imports: [BrowserModule, AppRoutingModule, NgbModule, GenModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
