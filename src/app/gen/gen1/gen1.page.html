@@ -2,7 +2,7 @@
   <div *ngFor="let pokemon of pokemons" class="card" style="width: 12rem">
     <div class="card-body text-center">
       <img src="{{ pokemon.image }}" />
-      <h5 class="card-title">{{pokemon.name | titlecase }}</h5>
+      <h5 class="card-title">#{{pokemon.id}} {{pokemon.name | titlecase }}</h5>
       <a class="btn btn-danger" [routerLink]="['/pokemon', pokemon.id]"
         >Infos</a
       >
