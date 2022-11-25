@@ -6,4 +6,13 @@ nav {
       left: 0.4rem;
     }
   }
+  li {
+    color: rgb(61, 61, 61);
+    a {
+      transition: 0.3s;
+    }
+    a:hover {
+      transform: scale(1.1);
+    }
+  }
 }

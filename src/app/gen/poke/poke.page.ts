@@ -17,6 +17,7 @@ export class PokePage implements OnInit {
   ) {}
   sub!: Subscription;
   pokemonDetails!: SinglePkmn;
+  loading: boolean = true;
 
   ngOnInit(): void {
     this.sub = this.router.params.subscribe((params) => {
@@ -24,6 +25,9 @@ export class PokePage implements OnInit {
       this.genService.getDetails(id).subscribe((data) => {
         this.pokemonDetails = data;
       });
+      setTimeout(() => {
+        this.loading = false;
+      }, 1500);
     });
   }
 

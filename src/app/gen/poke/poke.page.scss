@@ -1,3 +1,10 @@
+.spinner-div {
+  padding-top: 5rem;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
 i {
   color: white;
   z-index: 100;
@@ -6,7 +13,12 @@ i {
   opacity: 0.6;
   top: 4.2rem;
   left: 1rem;
+  transition: 0.3s;
 }
+i:hover {
+  opacity: 0.8;
+}
+
 .poke-container {
   width: 100%;
   height: calc(100vh - 60px);
@@ -27,6 +39,8 @@ i {
     bottom: 2rem;
   }
 }
+
+// CLASSES FOR TYPES
 
 .fire {
   background-color: rgba(255, 160, 44, 0.8);

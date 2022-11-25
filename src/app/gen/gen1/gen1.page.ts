@@ -45,12 +45,12 @@ export interface SinglePkmn {
 export class Gen1Page implements OnInit {
   urlGen: string = '?limit=151&offset=0';
   pokemons!: Pkmn[] | undefined;
+  loading: boolean = true;
 
   constructor(private genService: GenService) {}
 
   ngOnInit(): void {
     this.getPokemons();
-    this.getPokemon();
   }
 
   getPokemons() {
@@ -67,16 +67,9 @@ export class Gen1Page implements OnInit {
           });
         }
       });
-    });
-  }
-
-  getPokemon() {
-    this.pokemons?.forEach((pokemon) => {
-      if (pokemon.url !== undefined) {
-        this.genService
-          .getPokemon(pokemon.url)
-          .subscribe((data) => console.log(data));
-      }
+      setTimeout(() => {
+        this.loading = false;
+      }, 1500);
     });
   }
 
