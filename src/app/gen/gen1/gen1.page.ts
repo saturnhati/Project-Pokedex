@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Obj } from '@popperjs/core';
-import { ObservableLike } from 'rxjs';
 import { GenService } from '../gen.service';
 
 export interface Results {
@@ -15,6 +14,7 @@ export interface Pkmn {
   url?: string;
   image?: string;
   id?: number;
+  type?: string;
 }
 
 export interface SinglePkmn {
@@ -43,7 +43,7 @@ export interface SinglePkmn {
   styleUrls: ['./gen1.page.scss'],
 })
 export class Gen1Page implements OnInit {
-  urlGen: string = '?limit=150&offset=0';
+  urlGen: string = '?limit=151&offset=0';
   pokemons!: Pkmn[] | undefined;
 
   constructor(private genService: GenService) {}
@@ -61,8 +61,12 @@ export class Gen1Page implements OnInit {
         if (pokemon.url !== undefined) {
           this.genService.getPokemon(pokemon.url).subscribe((data) => {
             console.log(data);
+            if (data.types !== undefined) {
+              pokemon.type = data.types[0]['type'].name;
+            }
             pokemon.id = data.id;
             pokemon.image = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.id}.png`;
+            // pokemon.image = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${data.id}.png`;
           });
         }
       });
@@ -76,6 +80,14 @@ export class Gen1Page implements OnInit {
           .getPokemon(pokemon.url)
           .subscribe((data) => console.log(data));
       }
+    });
+  }
+
+  toTop() {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
     });
   }
 }

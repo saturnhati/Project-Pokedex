@@ -1,5 +1,183 @@
-div {
-  .btn {
-    font-size: 0.7rem;
+.background {
+  width: 100%;
+  height: 100%;
+  // background-image: url(../../../assets/images/bg-gen1.png);
+  // box-shadow: 0px 0px 0px 2000px inset rgba(255, 255, 255, 0.2);
+  // background-attachment: fixed;
+  // background-size: cover;
+  // background-position: bottom;
+  background-color: black;
+}
+
+.main-container {
+  width: 90%;
+  margin: 0 auto;
+  padding: {
+    top: 2rem;
+    bottom: 2rem;
   }
+  .card {
+    color: white;
+  }
+  h5 {
+    font-size: 1rem;
+  }
+  .pkmn-id {
+    font-size: 0.9rem;
+  }
+  .btn {
+    color: white;
+    background-color: rgb(255 255 255 / 0.3);
+    width: 100%;
+    font-size: 0.7rem;
+    border-radius: 0;
+    transition: 0.3s;
+  }
+  .btn:hover {
+    background-color: rgb(255 255 255 / 0.7);
+  }
+}
+
+i {
+  cursor: pointer;
+  z-index: 100;
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  font-size: 2rem;
+  color: black;
+  background-color: rgb(255 255 255 / 0.6);
+  border-radius: 50%;
+  padding: {
+    top: 0.1rem;
+    bottom: 0.1rem;
+    left: 0.6rem;
+    right: 0.6rem;
+  }
+}
+
+.fire {
+  background-color: rgba(255, 160, 44, 0.8);
+  background-image: url(../../../assets/images/fire.png);
+  background-size: 160%;
+  background-position: 12% 64%;
+}
+
+.grass {
+  background-color: rgba(145, 237, 145, 0.8);
+  background-image: url(../../../assets/images/grass.png);
+  background-size: 160%;
+  background-position: 18% 70%;
+}
+
+.water {
+  background-color: rgba(112, 169, 255, 0.8);
+  background-image: url(../../../assets/images/water.png);
+  background-size: 160%;
+  background-position: 10% 64%;
+}
+
+.normal {
+  background-color: rgba(226, 226, 226, 0.8);
+  background-image: url(../../../assets/images/normal.png);
+  background-size: 160%;
+  background-position: 20% 80%;
+}
+
+.fighting {
+  background-color: rgba(202, 130, 54, 0.8);
+  background-image: url(../../../assets/images/fighting.png);
+  background-size: 160%;
+  background-position: 10% 90%;
+}
+
+.flying {
+  background-color: rgba(149, 219, 243, 0.8);
+  background-image: url(../../../assets/images/flying.png);
+  background-size: 160%;
+  background-position: 10% 70%;
+}
+
+.poison {
+  background-color: rgba(193, 135, 220, 0.8);
+  background-image: url(../../../assets/images/poison.png);
+  background-size: 160%;
+  background-position: 16% 88%;
+}
+
+.ground {
+  background-color: rgb(223 216 127 / 0.8);
+  background-image: url(../../../assets/images/ground.png);
+  background-size: 130%;
+  background-position: 0% 110%;
+}
+
+.rock {
+  background-color: rgba(195, 184, 123, 0.8);
+  background-image: url(../../../assets/images/rock.png);
+  background-size: 160%;
+  background-position: 28% 76%;
+}
+
+.bug {
+  background-color: rgba(208, 235, 149, 0.8);
+  background-image: url(../../../assets/images/bug.png);
+  background-size: 160%;
+  background-position: 18% 70%;
+}
+
+.ghost {
+  background-color: rgba(142, 130, 172, 0.8);
+  background-image: url(../../../assets/images/ghost.png);
+  background-size: 160%;
+  background-position: 10% 80%;
+}
+
+.steel {
+  background-color: rgba(182, 182, 182, 0.8);
+  background-image: url(../../../assets/images/steel.png);
+  background-size: 160%;
+  background-position: 10% 70%;
+}
+
+.electric {
+  background-color: rgba(255, 240, 35, 0.9);
+  background-image: url(../../../assets/images/electric.png);
+  background-size: 130%;
+  background-position: -48% 74%;
+}
+
+.psychic {
+  background-color: rgba(229, 149, 209, 0.9);
+  background-image: url(../../../assets/images/psychic.png);
+  background-size: 130%;
+  background-position: -28% 110%;
+}
+
+.ice {
+  background-color: rgba(161, 244, 244, 0.9);
+  background-image: url(../../../assets/images/ice.png);
+  background-size: 160%;
+  background-position: 10% 76%;
+}
+
+.dragon {
+  background-color: rgba(129, 90, 225, 0.9);
+  background-image: url(../../../assets/images/dragon.png);
+  background-size: 120%;
+  background-position: -100% 80%;
+}
+
+.dark {
+  background-color: rgba(91, 91, 91, 0.9);
+  background-image: url(../../../assets/images/dark.png);
+  background-size: 160%;
+  background-position: 10% 70%;
+}
+
+.fairy {
+  background-color: rgba(250, 178, 242, 0.9);
+  background-image: url(../../../assets/images/fairy.png);
+  background-size: 130%;
+  background-position: -18% 100%;
 }
