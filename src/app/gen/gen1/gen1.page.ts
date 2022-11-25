@@ -55,18 +55,15 @@ export class Gen1Page implements OnInit {
 
   getPokemons() {
     this.genService.getPokemons(this.urlGen).subscribe((data) => {
-      console.log(data.results);
       this.pokemons = data.results;
       this.pokemons?.forEach((pokemon) => {
         if (pokemon.url !== undefined) {
           this.genService.getPokemon(pokemon.url).subscribe((data) => {
-            console.log(data);
             if (data.types !== undefined) {
               pokemon.type = data.types[0]['type'].name;
             }
             pokemon.id = data.id;
             pokemon.image = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.id}.png`;
-            // pokemon.image = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${data.id}.png`;
           });
         }
       });

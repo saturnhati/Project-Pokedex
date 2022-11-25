@@ -1,0 +1,155 @@
+i {
+  color: white;
+  z-index: 100;
+  cursor: pointer;
+  position: fixed;
+  opacity: 0.6;
+  top: 4.2rem;
+  left: 1rem;
+}
+.poke-container {
+  width: 100%;
+  height: calc(100vh - 60px);
+  padding-top: 3rem;
+}
+.poke-card {
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+  width: 60%;
+  background-color: white;
+  margin: {
+    left: auto;
+    right: auto;
+  }
+  padding: {
+    top: 2rem;
+    bottom: 2rem;
+  }
+}
+
+.fire {
+  background-color: rgba(255, 160, 44, 0.8);
+  background-image: url(../../../assets/images/fire.png);
+  background-size: 120%;
+  background-position: -90% 55%;
+}
+
+.grass {
+  background-color: rgba(145, 237, 145, 0.8);
+  background-image: url(../../../assets/images/grass.png);
+  background-size: 120%;
+  background-position: -80% 60%;
+}
+
+.water {
+  background-color: rgba(112, 169, 255, 0.8);
+  background-image: url(../../../assets/images/water.png);
+  background-size: 120%;
+  background-position: -86% 58%;
+}
+
+.normal {
+  background-color: rgba(226, 226, 226, 0.8);
+  background-image: url(../../../assets/images/normal.png);
+  background-size: 120%;
+  background-position: -80% 70%;
+}
+
+.fighting {
+  background-color: rgba(202, 130, 54, 0.8);
+  background-image: url(../../../assets/images/fighting.png);
+  background-size: 120%;
+  background-position: -100% 70%;
+}
+
+.flying {
+  background-color: rgba(149, 219, 243, 0.8);
+  background-image: url(../../../assets/images/flying.png);
+  background-size: 120%;
+  background-position: -90% 55%;
+}
+
+.poison {
+  background-color: rgba(193, 135, 220, 0.8);
+  background-image: url(../../../assets/images/poison.png);
+  background-size: 120%;
+  background-position: -90% 66%;
+}
+
+.ground {
+  background-color: rgb(223 216 127 / 0.8);
+  background-image: url(../../../assets/images/ground.png);
+  background-size: 120%;
+  background-position: -90% 66%;
+}
+
+.rock {
+  background-color: rgba(195, 184, 123, 0.8);
+  background-image: url(../../../assets/images/rock.png);
+  background-size: 120%;
+  background-position: -84% 60%;
+}
+
+.bug {
+  background-color: rgba(208, 235, 149, 0.8);
+  background-image: url(../../../assets/images/bug.png);
+  background-size: 120%;
+  background-position: -90% 50%;
+}
+
+.ghost {
+  background-color: rgba(142, 130, 172, 0.8);
+  background-image: url(../../../assets/images/ghost.png);
+  background-size: 120%;
+  background-position: -90% 60%;
+}
+
+.steel {
+  background-color: rgba(182, 182, 182, 0.8);
+  background-image: url(../../../assets/images/steel.png);
+  background-size: 120%;
+  background-position: -90% 55%;
+}
+
+.electric {
+  background-color: rgba(255, 240, 35, 0.9);
+  background-image: url(../../../assets/images/electric.png);
+  background-size: 120%;
+  background-position: -110% 40%;
+}
+
+.psychic {
+  background-color: rgba(229, 149, 209, 0.9);
+  background-image: url(../../../assets/images/psychic.png);
+  background-size: 120%;
+  background-position: -90% 55%;
+}
+
+.ice {
+  background-color: rgba(161, 244, 244, 0.9);
+  background-image: url(../../../assets/images/ice.png);
+  background-size: 120%;
+  background-position: -90% 55%;
+}
+
+.dragon {
+  background-color: rgba(129, 90, 225, 0.9);
+  background-image: url(../../../assets/images/dragon.png);
+  background-size: 120%;
+  background-position: -90% 30%;
+}
+
+.dark {
+  background-color: rgba(91, 91, 91, 0.9);
+  background-image: url(../../../assets/images/dark.png);
+  background-size: 120%;
+  background-position: -90% 55%;
+}
+
+.fairy {
+  background-color: rgba(250, 178, 242, 0.9);
+  background-image: url(../../../assets/images/fairy.png);
+  background-size: 120%;
+  background-position: -90% 60%;
+}

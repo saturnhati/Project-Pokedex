@@ -1,21 +1,48 @@
-<div *ngIf="pokemonDetails !== undefined" class="container my-4">
-  <i class="bi bi-arrow-left-circle-fill fs-1 float-left"></i>
-  <img
-    width="250px"
-    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{pokemonDetails.id}}.png"
-  />
-  <h1>#{{ pokemonDetails.id }} {{ pokemonDetails.name | titlecase }}</h1>
-  <h4>Type:</h4>
-  <p>
-    <span *ngFor="let item of pokemonDetails.types"
-      >{{ item['type'].name }}&nbsp;</span
-    >
-  </p>
-  <h4>Sprites:</h4>
-  <img
-    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemonDetails.id}}.png"
-  />
-  <img
-    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/{{pokemonDetails.id}}.png"
-  />
+<i class="bi bi-arrow-left-circle-fill fs-1 float-left" (click)="goBack()"></i>
+<div
+  *ngIf="pokemonDetails !== undefined && pokemonDetails.types !== undefined"
+  class="poke-container"
+>
+  <div
+    class="poke-card"
+    [ngClass]="{
+    'grass': pokemonDetails.types[0]['type'].name === 'grass', 
+    'fire': pokemonDetails.types[0]['type'].name === 'fire', 
+    'water': pokemonDetails.types[0]['type'].name === 'water',
+    'normal': pokemonDetails.types[0]['type'].name === 'normal',
+    'fighting': pokemonDetails.types[0]['type'].name === 'fighting',
+    'flying': pokemonDetails.types[0]['type'].name === 'flying',
+    'poison': pokemonDetails.types[0]['type'].name === 'poison',
+    'ground': pokemonDetails.types[0]['type'].name === 'ground',
+    'rock': pokemonDetails.types[0]['type'].name === 'rock',
+    'bug': pokemonDetails.types[0]['type'].name === 'bug',
+    'ghost': pokemonDetails.types[0]['type'].name === 'ghost',
+    'steel': pokemonDetails.types[0]['type'].name === 'steel',
+    'electric': pokemonDetails.types[0]['type'].name === 'electric',
+    'psychic': pokemonDetails.types[0]['type'].name === 'psychic',
+    'ice': pokemonDetails.types[0]['type'].name === 'ice',
+    'dragon': pokemonDetails.types[0]['type'].name === 'dragon',
+    'dark': pokemonDetails.types[0]['type'].name === 'dark',
+    'fairy': pokemonDetails.types[0]['type'].name === 'fairy'
+  }"
+  >
+    <img
+      width="250px"
+      src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{pokemonDetails.id}}.png"
+    />
+    <h1>#{{ pokemonDetails.id }} {{ pokemonDetails.name | titlecase }}</h1>
+    <h4>Type:</h4>
+    <p>
+      <span *ngFor="let item of pokemonDetails.types"
+        >{{ item['type'].name }}&nbsp;</span
+      >
+    </p>
+    <h4>Sprites:</h4>
+    <img
+      src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemonDetails.id}}.png"
+    />
+    <img
+      src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/{{pokemonDetails.id}}.png"
+    />
+  </div>
 </div>
