@@ -80,4 +80,37 @@ export class Gen1Page implements OnInit {
       behavior: 'smooth',
     });
   }
+
+  get1() {
+    this.urlGen = '?limit=151&offset=0';
+    this.getPokemons();
+  }
+  get2() {
+    this.urlGen = '?limit=100&offset=151';
+    this.getPokemons();
+  }
+  get3() {
+    this.urlGen = '?limit=135&offset=251';
+    this.getPokemons();
+  }
+  get4() {
+    this.urlGen = '?limit=107&offset=386';
+    this.getPokemons();
+  }
+  get5() {
+    this.urlGen = '?limit=156&offset=493';
+    this.getPokemons();
+  }
+  get6() {
+    this.urlGen = '?limit=72&offset=649';
+    this.getPokemons();
+  }
+  get7() {
+    this.urlGen = '?limit=88&offset=721';
+    this.getPokemons();
+  }
+  get8() {
+    this.urlGen = '?limit=89&offset=809';
+    this.getPokemons();
+  }
 }

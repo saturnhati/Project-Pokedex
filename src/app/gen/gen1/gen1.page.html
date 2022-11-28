@@ -1,34 +1,76 @@
+<!-- !loading spinner -->
 <div class="spinner-div" *ngIf="loading === true">
   <div class="spinner-border text-light" role="status">
     <span class="visually-hidden">Loading...</span>
   </div>
 </div>
-<div *ngIf="loading === false">
-  <div class="background">
+<!-- !actual page -->
+<div *ngIf="loading === false" class="d-flex">
+  <!-- !sidebar -->
+  <div
+    class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark"
+    style="width: 280px"
+  >
+    <a
+      href="/"
+      class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"
+    >
+      <span class="fs-4">GENERATIONS</span>
+    </a>
+    <hr />
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li class="nav-item">
+        <a class="nav-link active" (click)="get1()">GEN 1 - KANTO</a>
+      </li>
+      <li>
+        <a class="nav-link text-white" (click)="get2()"> GEN 2 - JOHTO</a>
+      </li>
+      <li>
+        <a class="nav-link text-white" (click)="get3()"> GEN 3 - HOENN</a>
+      </li>
+      <li>
+        <a class="nav-link text-white" (click)="get4()"> GEN 4 - SINNOH</a>
+      </li>
+      <li>
+        <a class="nav-link text-white" (click)="get5()"> GEN 5 - UNIMA</a>
+      </li>
+      <li>
+        <a class="nav-link text-white" (click)="get6()"> GEN 6 - KALOS </a>
+      </li>
+      <li>
+        <a class="nav-link text-white" (click)="get7()"> GEN 7 - ALOLA</a>
+      </li>
+      <li>
+        <a class="nav-link text-white" (click)="get8()"> GEN 8 - GALAR</a>
+      </li>
+    </ul>
+  </div>
+  <!-- !pokemons container -->
+  <div>
     <div class="d-flex flex-wrap gap-3 main-container">
       <div
         *ngFor="let pokemon of pokemons"
         class="card"
         [ngClass]="{
-          'grass': pokemon.type === 'grass', 
-          'fire': pokemon.type === 'fire', 
-          'water': pokemon.type === 'water',
-          'normal': pokemon.type === 'normal',
-          'fighting': pokemon.type === 'fighting',
-          'flying': pokemon.type === 'flying',
-          'poison': pokemon.type === 'poison',
-          'ground': pokemon.type === 'ground',
-          'rock': pokemon.type === 'rock',
-          'bug': pokemon.type === 'bug',
-          'ghost': pokemon.type === 'ghost',
-          'steel': pokemon.type === 'steel',
-          'electric': pokemon.type === 'electric',
-          'psychic': pokemon.type === 'psychic',
-          'ice': pokemon.type === 'ice',
-          'dragon': pokemon.type === 'dragon',
-          'dark': pokemon.type === 'dark',
-          'fairy': pokemon.type === 'fairy'
-        }"
+            'grass': pokemon.type === 'grass', 
+            'fire': pokemon.type === 'fire', 
+            'water': pokemon.type === 'water',
+            'normal': pokemon.type === 'normal',
+            'fighting': pokemon.type === 'fighting',
+            'flying': pokemon.type === 'flying',
+            'poison': pokemon.type === 'poison',
+            'ground': pokemon.type === 'ground',
+            'rock': pokemon.type === 'rock',
+            'bug': pokemon.type === 'bug',
+            'ghost': pokemon.type === 'ghost',
+            'steel': pokemon.type === 'steel',
+            'electric': pokemon.type === 'electric',
+            'psychic': pokemon.type === 'psychic',
+            'ice': pokemon.type === 'ice',
+            'dragon': pokemon.type === 'dragon',
+            'dark': pokemon.type === 'dark',
+            'fairy': pokemon.type === 'fairy'
+          }"
         style="width: 12rem"
       >
         <div class="card-body text-center">
