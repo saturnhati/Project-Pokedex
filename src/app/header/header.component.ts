@@ -26,7 +26,7 @@ export class HeaderComponent implements OnInit {
           this.route
             .navigateByUrl('/login', { skipLocationChange: true })
             .then(() => {
-              this.route.navigate(['/home']);
+              this.route.navigate(['/home']), this.form.reset();
             });
       },
       (err) => {

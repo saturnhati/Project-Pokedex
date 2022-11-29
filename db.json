@@ -13,6 +13,13 @@
       "firstname": "Gaia",
       "lastname": "Filippi",
       "id": 2
+    },
+    {
+      "email": "luca@sena.it",
+      "password": "$2a$10$WZxqB9nPuBjpj8ZUTFl98uL/StoP4/mpK.7jnJIkJWrwvBSOQg.aK",
+      "firstname": "Luca",
+      "lastname": "Senatore",
+      "id": 3
     }
   ]
 }
