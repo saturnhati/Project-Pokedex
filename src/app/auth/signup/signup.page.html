@@ -1,0 +1,57 @@
+<form class="text-center form-box" #f="ngForm" (ngSubmit)="onSubmit()">
+  <div class="input-box">
+    <img
+      class="mb-4"
+      src="https://media.giphy.com/media/FRDFK0bgXdAic/giphy.gif"
+      alt=""
+      width="72"
+    />
+    <h1 class="h3 mb-3 fw-normal">Please sign up!</h1>
+
+    <div class="form-floating mb-2">
+      <input
+        name="firstname"
+        ngModel
+        type="text"
+        class="form-control"
+        id="floatingFirstname"
+        placeholder="First name"
+      />
+      <label for="floatingFirstname">First Name</label>
+    </div>
+    <div class="form-floating mb-2">
+      <input
+        name="lastname"
+        ngModel
+        type="text"
+        class="form-control"
+        id="floatingLastname"
+        placeholder="Last name"
+      />
+      <label for="floatingLastname">Last Name</label>
+    </div>
+    <div class="form-floating mb-2">
+      <input
+        name="email"
+        ngModel
+        type="email"
+        class="form-control"
+        id="floatingEmail"
+        placeholder="name@example.com"
+      />
+      <label for="floatingEmail">Email address</label>
+    </div>
+    <div class="form-floating mb-2">
+      <input
+        name="password"
+        ngModel
+        type="password"
+        class="form-control"
+        id="floatingPassword"
+        placeholder="Password"
+      />
+      <label for="floatingPassword">Password</label>
+    </div>
+  </div>
+  <button class="btn button-submit" type="submit">Sign up</button>
+</form>

@@ -1,15 +1,13 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from '../auth/auth.service';
+import { AuthService } from '../auth.service';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss'],
+  templateUrl: './login.page.html',
+  styleUrls: ['./login.page.scss'],
 })
-export class HeaderComponent implements OnInit {
-  public isCollapsed = true;
+export class LoginPage implements OnInit {
   @ViewChild('f') form!: NgForm;
   error = undefined;
 
@@ -23,23 +21,11 @@ export class HeaderComponent implements OnInit {
         console.log(data),
           (this.error = undefined),
           localStorage.setItem('userLogin', JSON.stringify(data)),
-          this.route
-            .navigateByUrl('/login', { skipLocationChange: true })
-            .then(() => {
-              this.route.navigate(['/home']);
-            });
+          this.route.navigate(['/home']);
       },
       (err) => {
         console.log(err), (this.error = err.error);
       }
     );
-  }
-
-  logout() {
-    this.authService.logout();
-  }
-
-  collapseProperty() {
-    this.isCollapsed = true;
   }
 }

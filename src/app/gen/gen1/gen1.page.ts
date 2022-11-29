@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Obj } from '@popperjs/core';
+import { AuthData, AuthService } from 'src/app/auth/auth.service';
 import { GenService } from '../gen.service';
 
 export interface Results {
@@ -46,11 +47,17 @@ export class Gen1Page implements OnInit {
   urlGen: string = '?limit=151&offset=0';
   pokemons!: Pkmn[] | undefined;
   loading: boolean = true;
+  loggedUser!: AuthData | null;
 
-  constructor(private genService: GenService) {}
+  constructor(
+    private genService: GenService,
+    private authService: AuthService
+  ) {}
 
   ngOnInit(): void {
     this.getPokemons();
+    this.loggedUser = this.authService.getIsLogged();
+    console.log(this.loggedUser?.user.firstname);
   }
 
   getPokemons() {

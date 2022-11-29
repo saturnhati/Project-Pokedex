@@ -10,12 +10,47 @@ nav {
     color: rgb(61, 61, 61);
     i {
       font-size: 1.2rem;
+      cursor: pointer;
     }
     a {
       transition: 0.3s;
     }
     a:hover {
       transform: scale(1.1);
+    }
+  }
+  .login {
+    cursor: pointer;
+    position: relative;
+  }
+  .login-card {
+    position: absolute;
+    background-color: #212528;
+    z-index: 100;
+    width: 300px;
+    right: 0;
+    border-radius: 8px;
+    .input-box {
+      padding: {
+        top: 1rem;
+        bottom: 1rem;
+        left: 2rem;
+        right: 2rem;
+      }
+    }
+    .button-submit {
+      color: white;
+      font-size: 1.2rem;
+      width: 100%;
+      border-radius: 0;
+      background-color: rgb(255 255 255 / 0.1);
+      padding: {
+        top: 0.6rem;
+        bottom: 0.6rem;
+      }
+    }
+    .button-submit:hover {
+      background-color: rgb(255 255 255 / 0.2);
     }
   }
 }

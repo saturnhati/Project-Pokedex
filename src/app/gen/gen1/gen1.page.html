@@ -15,12 +15,15 @@
       href="/"
       class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"
     >
-      <span class="fs-4">GENERATIONS</span>
+      <span *ngIf="loggedUser == null" class="fs-4">Hello!</span>
+      <span *ngIf="loggedUser !== null" class="fs-4"
+        >Hello, {{ this.loggedUser.user.firstname }}!</span
+      >
     </a>
     <hr />
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
-        <a class="nav-link active" (click)="get1()">GEN 1 - KANTO</a>
+        <a class="nav-link text-white" (click)="get1()">GEN 1 - KANTO</a>
       </li>
       <li>
         <a class="nav-link text-white" (click)="get2()"> GEN 2 - JOHTO</a>

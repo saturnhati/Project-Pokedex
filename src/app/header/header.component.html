@@ -27,13 +27,71 @@
       </ul>
       <ul class="navbar-nav mb-2 mb-lg-0 d-flex align-items-center">
         <li class="nav-item me-3">
-          <a class="nav-link active" aria-current="page" href="#">Sign Up</a>
+          <a
+            class="nav-link active"
+            aria-current="page"
+            [routerLink]="['/signup']"
+            routerLinkActive="router-link-active"
+            >Sign Up</a
+          >
+        </li>
+        <li class="nav-item me-3 login">
+          <a
+            class="nav-link active"
+            aria-current="page"
+            (click)="isCollapsed = !isCollapsed"
+            [attr.aria-expanded]="!isCollapsed"
+            aria-controls="collapseExample"
+            >Login</a
+          >
+          <!-- !login toggle card -->
+          <div
+            #collapse="ngbCollapse"
+            [(ngbCollapse)]="isCollapsed"
+            class="login-card"
+          >
+            <form
+              class="text-center form-box pt-2"
+              #f="ngForm"
+              (ngSubmit)="onSubmit()"
+            >
+              <div class="input-box">
+                <div class="form-floating mb-2">
+                  <input
+                    name="email"
+                    ngModel
+                    type="email"
+                    class="form-control"
+                    id="floatingEmail"
+                    placeholder="name@example.com"
+                  />
+                  <label for="floatingEmail">Email address</label>
+                </div>
+                <div class="form-floating mb-2">
+                  <input
+                    name="password"
+                    ngModel
+                    type="password"
+                    class="form-control"
+                    id="floatingPassword"
+                    placeholder="Password"
+                  />
+                  <label for="floatingPassword">Password</label>
+                </div>
+              </div>
+              <button
+                class="btn button-submit"
+                type="submit"
+                (click)="collapseProperty()"
+              >
+                Login
+              </button>
+            </form>
+          </div>
+          <!-- !end login toggle card -->
         </li>
         <li class="nav-item me-3">
-          <a class="nav-link active" aria-current="page" href="#">Login</a>
-        </li>
-        <li class="nav-item me-3">
-          <i class="bi bi-box-arrow-right"></i>
+          <i class="bi bi-box-arrow-right" (click)="logout()"></i>
         </li>
       </ul>
     </div>
