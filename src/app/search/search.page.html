@@ -1,0 +1,59 @@
+<!-- !start search input -->
+<div class="search-form">
+  <div class="form-floating">
+    <input
+      name="search"
+      ngModel
+      type="search"
+      class="form-control"
+      id="floatingSearch"
+      placeholder="Search"
+      (search)="clear($event)"
+      (keyup)="checkPokemons($event)"
+    />
+    <label for="floatingSearch">Search</label>
+  </div>
+</div>
+<!-- !end search input -->
+<!-- !pokemon container -->
+<div>
+  <div class="d-flex flex-wrap gap-3 main-container">
+    <div
+      *ngFor="let pokemon of searchedPokemons"
+      class="card"
+      [ngClass]="{
+            'grass': pokemon.type === 'grass', 
+            'fire': pokemon.type === 'fire', 
+            'water': pokemon.type === 'water',
+            'normal': pokemon.type === 'normal',
+            'fighting': pokemon.type === 'fighting',
+            'flying': pokemon.type === 'flying',
+            'poison': pokemon.type === 'poison',
+            'ground': pokemon.type === 'ground',
+            'rock': pokemon.type === 'rock',
+            'bug': pokemon.type === 'bug',
+            'ghost': pokemon.type === 'ghost',
+            'steel': pokemon.type === 'steel',
+            'electric': pokemon.type === 'electric',
+            'psychic': pokemon.type === 'psychic',
+            'ice': pokemon.type === 'ice',
+            'dragon': pokemon.type === 'dragon',
+            'dark': pokemon.type === 'dark',
+            'fairy': pokemon.type === 'fairy'
+          }"
+      style="width: 12rem"
+    >
+      <div class="card-body text-center">
+        <img src="{{ pokemon.image }}" />
+        <h5 class="card-title">
+          <span class="pkmn-id">#{{pokemon.id}}</span> {{pokemon.name |
+          titlecase }}
+        </h5>
+      </div>
+      <a class="btn" [routerLink]="['/pokemon', pokemon.id]"
+        ><span class="btn-text">Info</span></a
+      >
+    </div>
+  </div>
+</div>
+<!-- !end pokemon container -->

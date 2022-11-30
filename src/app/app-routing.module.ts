@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { Gen1Page } from './gen/gen1/gen1.page';
-import { HomePage } from './home/home.page';
+import { SearchPage } from './search/search.page';
 
 const routes: Routes = [
   {
@@ -12,6 +12,10 @@ const routes: Routes = [
   {
     path: 'home',
     component: Gen1Page,
+  },
+  {
+    path: 'search',
+    component: SearchPage,
   },
 ];
 
