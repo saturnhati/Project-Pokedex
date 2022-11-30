@@ -7,7 +7,7 @@ import { Pkmn } from '../gen/gen1/gen1.page';
   styleUrls: ['./search.page.scss'],
 })
 export class SearchPage implements OnInit {
-  urlGen: string = '?limit=1000&offset=0';
+  urlGen: string = '?limit=100000&offset=0';
   searchedPokemons!: Pkmn[] | undefined;
   pokemons!: Pkmn[] | undefined;
 
