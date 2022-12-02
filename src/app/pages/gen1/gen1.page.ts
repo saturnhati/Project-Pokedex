@@ -1,43 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Obj } from '@popperjs/core';
 import { AuthData, AuthService } from 'src/app/auth/auth.service';
+import { Pkmn } from 'src/app/_models/pkmn.interface';
 import { GenService } from '../gen.service';
-
-export interface Results {
-  count?: number;
-  next?: string;
-  previous?: string;
-  results?: Pkmn[];
-}
-
-export interface Pkmn {
-  name?: string;
-  url?: string;
-  image?: string;
-  id?: number;
-  type?: string;
-}
-
-export interface SinglePkmn {
-  abilities?: [];
-  base_experience?: number;
-  forms?: [];
-  game_indices?: [];
-  height?: number;
-  held_items: [];
-  id?: number;
-  is_default?: boolean;
-  location_area_encounters?: string;
-  moves?: [];
-  name?: string;
-  order?: string;
-  past_types?: [];
-  species?: Obj;
-  sprites?: Obj;
-  stats?: Obj;
-  types?: Obj[];
-  weight?: number;
-}
 
 @Component({
   templateUrl: './gen1.page.html',

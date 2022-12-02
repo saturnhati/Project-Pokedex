@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeaderComponent } from './header/header.component';
-import { GenModule } from './gen/gen.module';
+import { GenModule } from './pages/gen.module';
 import { AuthModule } from './auth/auth.module';
 import { FormsModule } from '@angular/forms';
 import { SearchPage } from './search/search.page';

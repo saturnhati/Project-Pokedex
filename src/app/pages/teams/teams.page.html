@@ -1,0 +1,112 @@
+<!-- !pokemons container -->
+<div class="main-container">
+  <div class="button-container">
+    <button
+      type="button"
+      class="btn-new"
+      data-bs-toggle="modal"
+      data-bs-target="#staticBackdrop"
+      data-bs-whatever="@mdo"
+    >
+      New Team
+    </button>
+  </div>
+  <div *ngFor="let team of userTeams" class="d-flex flex-column team-box mb-3">
+    <div class="text">
+      <h2>{{ team.title }}</h2>
+      <p>{{ team.description }}</p>
+      <i (click)="removeTeam(team)" class="bi bi-trash3 trash-icon"></i>
+    </div>
+    <div class="d-flex flex-wrap gap-3">
+      <div
+        *ngFor="let pokemon of team.pokemons"
+        class="card"
+        [ngClass]="{
+                  'grass': pokemon.type === 'grass', 
+                  'fire': pokemon.type === 'fire', 
+                  'water': pokemon.type === 'water',
+                  'normal': pokemon.type === 'normal',
+                  'fighting': pokemon.type === 'fighting',
+                  'flying': pokemon.type === 'flying',
+                  'poison': pokemon.type === 'poison',
+                  'ground': pokemon.type === 'ground',
+                  'rock': pokemon.type === 'rock',
+                  'bug': pokemon.type === 'bug',
+                  'ghost': pokemon.type === 'ghost',
+                  'steel': pokemon.type === 'steel',
+                  'electric': pokemon.type === 'electric',
+                  'psychic': pokemon.type === 'psychic',
+                  'ice': pokemon.type === 'ice',
+                  'dragon': pokemon.type === 'dragon',
+                  'dark': pokemon.type === 'dark',
+                  'fairy': pokemon.type === 'fairy'
+                }"
+        style="width: 12rem"
+      >
+        <div class="card-body text-center">
+          <img src="{{ pokemon.image }}" />
+          <h5 class="card-title">
+            <span class="pkmn-id">#{{pokemon.id}}</span> {{pokemon.name |
+            titlecase }}
+          </h5>
+        </div>
+        <a class="btn" [routerLink]="['/pokemon', pokemon.id]"
+          ><span class="btn-text">Info</span></a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- !create team modal -->
+<div
+  class="modal fade"
+  id="staticBackdrop"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="staticBackdropLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Add User</h1>
+      </div>
+      <form class="text-center form-box" #f="ngForm" (ngSubmit)="addTeam()">
+        <div class="input-box">
+          <div class="form-floating mb-2">
+            <input
+              ngModel
+              name="title"
+              type="text"
+              class="form-control"
+              id="floatingTeamName"
+              placeholder="Team Name"
+            />
+            <label for="floatingFirstname">Team Name</label>
+          </div>
+          <div class="form-floating mb-2">
+            <input
+              ngModel
+              name="description"
+              type="text"
+              class="form-control"
+              id="floatingDescription"
+              placeholder="Description"
+            />
+            <label for="floatingDescription">Description</label>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-light" data-bs-dismiss="modal">
+            Save
+          </button>
+          <button type="button" class="btn btn-light" data-bs-dismiss="modal">
+            Close
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

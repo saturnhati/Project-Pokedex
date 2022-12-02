@@ -1,9 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { tap } from 'rxjs/operators';
+import { filter, tap } from 'rxjs/operators';
 import { User } from './user.interface';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Router } from '@angular/router';
+import { Team } from '../_models/team.interface';
 
 export interface AuthData {
   accessToken: string;
@@ -52,6 +53,10 @@ export class AuthService {
     );
   }
 
+  getUser() {
+    return this.http.get<User>('');
+  }
+
   logout() {
     this.isLogged = null;
     localStorage.removeItem('userLogin');
@@ -64,5 +69,21 @@ export class AuthService {
 
   getIsLogged() {
     return this.isLogged;
+  }
+
+  updateUser(data: Partial<User>, id: number | undefined) {
+    return this.http.patch<Team>('http://localhost:3000/users' + id, data);
+  }
+
+  getTeams() {
+    return this.http.get<Team[]>('http://localhost:3000/teams');
+  }
+
+  addTeam(obj: Team) {
+    return this.http.post<Team>('http://localhost:3000/teams', obj);
+  }
+
+  removeTeam(obj: Team) {
+    return this.http.delete<Team>('http://localhost:3000/teams/' + obj.id);
   }
 }

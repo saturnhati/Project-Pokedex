@@ -1,25 +1,49 @@
 {
   "users": [
     {
-      "email": "gaia@filippi.com",
-      "password": "$2a$10$L8YayStJ3PheAR9C8UAiqORXkB0fTSqAmH026BfqqUULHosn0FLY.",
-      "firstname": "Gaia",
-      "lastname": "Filippi",
-      "id": 1
-    },
-    {
       "email": "gaia@filippi.it",
       "password": "$2a$10$593.HyGiH6VC/dqfIRg3NuzAPdFzinfLw6OnZCKsPbZ6V0GHC0Ztu",
       "firstname": "Gaia",
       "lastname": "Filippi",
-      "id": 2
+      "id": 1
+    }
+  ],
+  "teams": [
+    {
+      "id": 1,
+      "title": "Team A",
+      "description": "my first team",
+      "trainer": 1,
+      "pokemons": [
+        {
+          "name": "bulbasaur",
+          "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
+          "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
+          "id": 1,
+          "type": "grass"
+        },
+        {
+          "name": "charmander",
+          "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
+          "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
+          "id": 4,
+          "type": "fire"
+        },
+        {
+          "name": "squirtle",
+          "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png",
+          "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png",
+          "id": 7,
+          "type": "water"
+        }
+      ]
     },
     {
-      "email": "luca@sena.it",
-      "password": "$2a$10$WZxqB9nPuBjpj8ZUTFl98uL/StoP4/mpK.7jnJIkJWrwvBSOQg.aK",
-      "firstname": "Luca",
-      "lastname": "Senatore",
-      "id": 3
+      "title": "Team B",
+      "description": "prova",
+      "trainer": 1,
+      "pokemons": [],
+      "id": 2
     }
   ]
 }

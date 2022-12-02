@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { GenService } from '../gen/gen.service';
-import { Pkmn } from '../gen/gen1/gen1.page';
+import { GenService } from '../pages/gen.service';
+import { Pkmn } from '../_models/pkmn.interface';
 
 @Component({
   templateUrl: './search.page.html',

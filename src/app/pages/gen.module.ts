@@ -4,6 +4,8 @@ import { Gen1Page } from './gen1/gen1.page';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { PokePage } from './poke/poke.page';
+import { TeamsPage } from './teams/teams.page';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -17,8 +19,13 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [Gen1Page, PokePage],
-  imports: [CommonModule, RouterModule.forChild(routes), HttpClientModule],
+  declarations: [Gen1Page, PokePage, TeamsPage],
+  imports: [
+    CommonModule,
+    RouterModule.forChild(routes),
+    HttpClientModule,
+    FormsModule,
+  ],
   exports: [Gen1Page, PokePage],
 })
 export class GenModule {}

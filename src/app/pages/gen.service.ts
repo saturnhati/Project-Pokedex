@@ -1,6 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Results, SinglePkmn } from './gen1/gen1.page';
+import { Pkmn } from '../_models/pkmn.interface';
+import { SinglePkmn } from '../_models/single-pkmn.interface';
+
+export interface Results {
+  count?: number;
+  next?: string;
+  previous?: string;
+  results?: Pkmn[];
+}
 
 @Injectable({
   providedIn: 'root',

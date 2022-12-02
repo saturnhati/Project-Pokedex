@@ -3,7 +3,7 @@ import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { GenService } from '../gen.service';
-import { SinglePkmn } from '../gen1/gen1.page';
+import { SinglePkmn } from 'src/app/_models/single-pkmn.interface';
 
 @Component({
   templateUrl: './poke.page.html',
