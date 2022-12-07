@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { AuthData, AuthService } from 'src/app/auth/auth.service';
 import { Pkmn } from 'src/app/_models/pkmn.interface';
+import { Team } from 'src/app/_models/team.interface';
 import { GenService } from '../gen.service';
 
 @Component({
@@ -12,6 +14,9 @@ export class Gen1Page implements OnInit {
   pokemons!: Pkmn[] | undefined;
   loading: boolean = true;
   loggedUser!: AuthData | null;
+  teams!: Team[] | undefined;
+  userTeams!: Team[] | undefined;
+  @ViewChild('f') form!: NgForm;
 
   constructor(
     private genService: GenService,
@@ -22,6 +27,7 @@ export class Gen1Page implements OnInit {
     this.getPokemons();
     this.loggedUser = this.authService.getIsLogged();
     console.log(this.loggedUser?.user.firstname);
+    this.getTeams();
   }
 
   getPokemons() {
@@ -83,5 +89,26 @@ export class Gen1Page implements OnInit {
   get8() {
     this.urlGen = '?limit=89&offset=809';
     this.getPokemons();
+  }
+
+  getTeams() {
+    this.authService.getTeams().subscribe((data) => {
+      this.teams = data;
+      this.userTeams = this.teams.filter(
+        (team) => team.trainer === this.loggedUser?.user.id
+      );
+    });
+  }
+
+  addPokemon(obj: Pkmn) {
+    console.log(this.form.value);
+    let teamId: number = this.form.value.id;
+    console.log(teamId);
+    let teamPokemons: Pkmn[] = [];
+    teamPokemons.push(obj);
+    console.log(teamPokemons);
+    this.authService
+      .updateTeam({ pokemons: teamPokemons }, teamId)
+      .subscribe((data) => console.log('Team updated!'));
   }
 }

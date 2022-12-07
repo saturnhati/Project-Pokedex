@@ -34,7 +34,7 @@
   }
 }
 
-i {
+.to-top {
   cursor: pointer;
   z-index: 100;
   position: fixed;
@@ -52,6 +52,12 @@ i {
     right: 0.4rem;
   }
 }
+.add-pkmn {
+  font-size: 1.6rem;
+  position: absolute;
+  left: 0.5rem;
+  top: 0.3rem;
+}
 i:hover {
   background-color: rgb(255 255 255 / 0.8);
 }
@@ -68,6 +74,10 @@ li {
 }
 li:hover {
   background-color: rgb(255 255 255 / 0.2);
+}
+
+.modal {
+  color: black;
 }
 
 // CLASSES FOR TYPES

@@ -40,9 +40,17 @@
     },
     {
       "title": "Team B",
-      "description": "prova",
+      "description": "my second team",
       "trainer": 1,
-      "pokemons": [],
+      "pokemons": [
+        {
+          "name": "bulbasaur",
+          "url": "https://pokeapi.co/api/v2/pokemon/1/",
+          "type": "grass",
+          "id": 1,
+          "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
+        }
+      ],
       "id": 2
     }
   ]

@@ -43,14 +43,20 @@ export class TeamsPage implements OnInit {
       let newTeam: Team = this.form.value;
       newTeam.trainer = this.loggedUser.user.id;
       newTeam.pokemons = [];
-      this.authService.addTeam(newTeam).subscribe((data) => console.log(data));
-      this.getTeams();
+      this.authService
+        .addTeam(newTeam)
+        .subscribe((data) => console.log('Team created!'));
     }
+    this.getTeams();
   }
 
   removeTeam(obj: Team) {
-    console.log('remove');
-    this.authService.removeTeam(obj);
+    console.log('remove - 1');
+    if (obj.id !== undefined) {
+      this.authService
+        .removeTeam(obj.id)
+        .subscribe((data) => console.log('Successfully removed!'));
+    }
     let i: number | undefined = this.userTeams?.indexOf(obj);
     if (i !== undefined) {
       this.userTeams?.splice(i, 1);

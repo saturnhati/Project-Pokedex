@@ -83,7 +83,12 @@ export class AuthService {
     return this.http.post<Team>('http://localhost:3000/teams', obj);
   }
 
-  removeTeam(obj: Team) {
-    return this.http.delete<Team>('http://localhost:3000/teams/' + obj.id);
+  updateTeam(data: Partial<Team>, id: number | undefined) {
+    return this.http.patch<Team>('http://localhost:3000/teams/' + id, data);
+  }
+
+  removeTeam(id: number) {
+    console.log('remove - 2');
+    return this.http.delete('http://localhost:3000/teams/' + id);
   }
 }

@@ -76,7 +76,67 @@
           }"
         style="width: 12rem"
       >
+        <!-- !Modal add to team -->
+        <div
+          class="modal fade"
+          id="addPokemonModal"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div *ngIf="this.loggedUser !== undefined" class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">
+                  Add this pokemon to your team
+                </h1>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <form (ngSubmit)="addPokemon(pokemon)" #f="ngForm">
+                <div class="form-floating mb-2">
+                  <select class="form-select" ngModel name="id" required>
+                    <option selected disabled>Choose a team</option>
+                    <option
+                      *ngFor="let team of userTeams"
+                      value="{{ team.id }}"
+                    >
+                      {{ team.title }}
+                    </option>
+                  </select>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                  <button
+                    type="submit"
+                    class="btn btn-primary"
+                    data-bs-dismiss="modal"
+                  >
+                    Add
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- !end add pokemon to team modal -->
         <div class="card-body text-center">
+          <i
+            *ngIf="this.loggedUser !== null"
+            data-bs-toggle="modal"
+            data-bs-target="#addPokemonModal"
+            class="bi bi-plus-circle add-pkmn"
+          ></i>
           <img src="{{ pokemon.image }}" />
           <h5 class="card-title">
             <span class="pkmn-id">#{{pokemon.id}}</span> {{pokemon.name |
@@ -89,5 +149,5 @@
       </div>
     </div>
   </div>
-  <i (click)="toTop()" class="bi bi-chevron-up"></i>
+  <i (click)="toTop()" class="bi bi-chevron-up to-top"></i>
 </div>
