@@ -34,14 +34,6 @@
       "team": 1
     },
     {
-      "name": "squirtle",
-      "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png",
-      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png",
-      "id": 7,
-      "type": "water",
-      "team": 1
-    },
-    {
       "name": "bulbasaur",
       "url": "https://pokeapi.co/api/v2/pokemon/1/",
       "type": "grass",

@@ -62,11 +62,11 @@ export class TeamsPage implements OnInit {
     if (this.loggedUser?.user.id !== undefined) {
       let newTeam: Team = this.form.value;
       newTeam.trainer = this.loggedUser.user.id;
-      this.authService
-        .addTeam(newTeam)
-        .subscribe((data) => console.log('Team created!'));
+      this.authService.addTeam(newTeam).subscribe((data) => {
+        console.log('Team created!');
+        this.getUserTeamsAndPokemons();
+      });
     }
-    this.getUserTeamsAndPokemons();
   }
 
   removeTeam(obj: Team) {
