@@ -5,6 +5,7 @@ import { User } from './user.interface';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Router } from '@angular/router';
 import { Team } from '../_models/team.interface';
+import { Pkmn } from '../_models/pkmn.interface';
 
 export interface AuthData {
   accessToken: string;
@@ -83,8 +84,16 @@ export class AuthService {
     return this.http.post<Team>('http://localhost:3000/teams', obj);
   }
 
-  updateTeam(data: Partial<Team>, id: number | undefined) {
-    return this.http.patch<Team>('http://localhost:3000/teams/' + id, data);
+  // updateTeam(data: Partial<Team>, id: number | undefined) {
+  //   return this.http.patch<Team>('http://localhost:3000/teams/' + id, data);
+  // }
+
+  getUserPokemons() {
+    return this.http.get<Pkmn>('http://localhost:3000/pokemons');
+  }
+
+  addPokemon(obj: Pkmn) {
+    return this.http.post<Pkmn>('http://localhost:3000/pokemons', obj);
   }
 
   removeTeam(id: number) {

@@ -139,11 +139,11 @@
           ></i>
           <img src="{{ pokemon.image }}" />
           <h5 class="card-title">
-            <span class="pkmn-id">#{{pokemon.id}}</span> {{pokemon.name |
+            <span class="pkmn-id">#{{pokemon.pokeid}}</span> {{pokemon.name |
             titlecase }}
           </h5>
         </div>
-        <a class="btn" [routerLink]="['/pokemon', pokemon.id]"
+        <a class="btn" [routerLink]="['/pokemon', pokemon.pokeid]"
           ><span class="btn-text">Info</span></a
         >
       </div>

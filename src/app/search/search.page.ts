@@ -27,7 +27,7 @@ export class SearchPage implements OnInit {
             if (data.types !== undefined) {
               pokemon.type = data.types[0]['type'].name;
             }
-            pokemon.id = data.id;
+            pokemon.pokeid = data.id;
             pokemon.image = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.id}.png`;
           });
         }

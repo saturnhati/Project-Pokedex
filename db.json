@@ -13,45 +13,51 @@
       "id": 1,
       "title": "Team A",
       "description": "my first team",
-      "trainer": 1,
-      "pokemons": [
-        {
-          "name": "bulbasaur",
-          "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
-          "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
-          "id": 1,
-          "type": "grass"
-        },
-        {
-          "name": "charmander",
-          "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
-          "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
-          "id": 4,
-          "type": "fire"
-        },
-        {
-          "name": "squirtle",
-          "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png",
-          "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png",
-          "id": 7,
-          "type": "water"
-        }
-      ]
+      "trainer": 1
+    }
+  ],
+  "pokemons": [
+    {
+      "name": "bulbasaur",
+      "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
+      "id": 1,
+      "type": "grass",
+      "team": 1
     },
     {
-      "title": "Team B",
-      "description": "my second team",
-      "trainer": 1,
-      "pokemons": [
-        {
-          "name": "bulbasaur",
-          "url": "https://pokeapi.co/api/v2/pokemon/1/",
-          "type": "grass",
-          "id": 1,
-          "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
-        }
-      ],
-      "id": 2
+      "name": "charmander",
+      "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
+      "id": 4,
+      "type": "fire",
+      "team": 1
+    },
+    {
+      "name": "squirtle",
+      "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png",
+      "id": 7,
+      "type": "water",
+      "team": 1
+    },
+    {
+      "name": "bulbasaur",
+      "url": "https://pokeapi.co/api/v2/pokemon/1/",
+      "type": "grass",
+      "pokeid": 1,
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
+      "team": "1",
+      "id": 8
+    },
+    {
+      "name": "bulbasaur",
+      "url": "https://pokeapi.co/api/v2/pokemon/1/",
+      "type": "grass",
+      "pokeid": 1,
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
+      "team": "1",
+      "id": 9
     }
   ]
 }

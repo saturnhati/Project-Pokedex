@@ -2,6 +2,7 @@ export interface Pkmn {
   name?: string;
   url?: string;
   image?: string;
-  id?: number;
+  pokeid?: number;
   type?: string;
+  team?: number;
 }

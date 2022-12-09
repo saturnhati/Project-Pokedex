@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AuthData, AuthService } from 'src/app/auth/auth.service';
+import { Pkmn } from 'src/app/_models/pkmn.interface';
 import { Team } from 'src/app/_models/team.interface';
 
 @Component({
@@ -13,6 +14,8 @@ export class TeamsPage implements OnInit {
   loggedUser!: AuthData | null;
   teams!: Team[] | undefined;
   userTeams!: Team[] | undefined;
+  allPokemons: Pkmn[] = [];
+  userPokemons: Pkmn[] = [];
 
   constructor(
     private authService: AuthService,
@@ -22,6 +25,7 @@ export class TeamsPage implements OnInit {
   ngOnInit(): void {
     this.getLoggedUserData();
     this.getTeams();
+    this.getPokemons();
   }
 
   getLoggedUserData() {
@@ -35,6 +39,20 @@ export class TeamsPage implements OnInit {
       this.userTeams = this.teams.filter(
         (team) => team.trainer === this.loggedUser?.user.id
       );
+    });
+  }
+
+  getPokemons() {
+    this.authService.getUserPokemons().subscribe((data) => {
+      this.allPokemons.push(data);
+      this.userPokemons = this.allPokemons.filter((pokemon) => {
+        if (this.userTeams !== undefined) {
+          for (let index = 0; index < this.userTeams.length; index++) {
+            pokemon.team === this.userTeams[index].id;
+            console.log(this.userPokemons);
+          }
+        }
+      });
     });
   }
 

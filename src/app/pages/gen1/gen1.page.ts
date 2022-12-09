@@ -39,7 +39,7 @@ export class Gen1Page implements OnInit {
             if (data.types !== undefined) {
               pokemon.type = data.types[0]['type'].name;
             }
-            pokemon.id = data.id;
+            pokemon.pokeid = data.id;
             pokemon.image = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.id}.png`;
           });
         }
@@ -102,13 +102,10 @@ export class Gen1Page implements OnInit {
 
   addPokemon(obj: Pkmn) {
     console.log(this.form.value);
-    let teamId: number = this.form.value.id;
-    console.log(teamId);
-    let teamPokemons: Pkmn[] = [];
-    teamPokemons.push(obj);
-    console.log(teamPokemons);
+    obj.team = this.form.value.id;
+    console.log(obj);
     this.authService
-      .updateTeam({ pokemons: teamPokemons }, teamId)
-      .subscribe((data) => console.log('Team updated!'));
+      .addPokemon(obj)
+      .subscribe((data) => console.log('Pokemon added to team'));
   }
 }
