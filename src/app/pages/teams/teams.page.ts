@@ -29,7 +29,6 @@ export class TeamsPage implements OnInit {
 
   getLoggedUserData() {
     this.loggedUser = this.authService.getIsLogged();
-    console.log(this.loggedUser?.user.firstname);
   }
 
   getUserTeamsAndPokemons() {
@@ -44,11 +43,9 @@ export class TeamsPage implements OnInit {
 
   getUserPokemons() {
     this.userPokemons = new Object();
-
     if (this.userTeams === undefined || this.userTeams.length === 0) {
       return;
     }
-
     this.authService.getUserPokemons().subscribe((data) => {
       this.teams?.forEach((team) => {
         this.userPokemons[`${team.id}`] = data.filter((pokemon) => {
@@ -70,11 +67,10 @@ export class TeamsPage implements OnInit {
   }
 
   removeTeam(obj: Team) {
-    console.log('remove - 1');
     if (obj.id !== undefined) {
       this.authService
         .removeTeam(obj.id)
-        .subscribe((data) => console.log('Successfully removed!'));
+        .subscribe((data) => console.log('Team removed!'));
     }
     let i: number | undefined = this.userTeams?.indexOf(obj);
     if (i !== undefined) {

@@ -26,7 +26,6 @@ export class Gen1Page implements OnInit {
   ngOnInit(): void {
     this.getPokemons();
     this.loggedUser = this.authService.getIsLogged();
-    console.log(this.loggedUser?.user.firstname);
     this.getTeams();
   }
 
@@ -101,9 +100,7 @@ export class Gen1Page implements OnInit {
   }
 
   addPokemon(form_data: any, obj: Pkmn) {
-    console.log(form_data);
     obj.team = Number(form_data.team_id);
-    console.log(obj);
     this.authService
       .addPokemon(obj)
       .subscribe((data) => console.log('Pokemon added to team'));
