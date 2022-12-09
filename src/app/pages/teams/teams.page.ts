@@ -61,6 +61,7 @@ export class TeamsPage implements OnInit {
       newTeam.trainer = this.loggedUser.user.id;
       this.authService.addTeam(newTeam).subscribe((data) => {
         console.log('Team created!');
+        this.form.reset();
         this.getUserTeamsAndPokemons();
       });
     }

@@ -84,23 +84,30 @@
           aria-labelledby="exampleModalLabel"
           aria-hidden="true"
         >
-          <div *ngIf="this.loggedUser !== undefined" class="modal-dialog">
+          <div
+            *ngIf="this.loggedUser !== undefined"
+            class="modal-dialog modal-dialog-centered"
+          >
             <div class="modal-content">
               <div class="modal-header">
                 <h1 class="modal-title fs-5" id="exampleModalLabel">
                   Add this pokemon to your team
                 </h1>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="modal"
+                <i
                   aria-label="Close"
-                ></button>
+                  data-bs-dismiss="modal"
+                  class="bi bi-x-lg close-icon"
+                ></i>
               </div>
               <form (ngSubmit)="addPokemon(f.value, pokemon)" #f="ngForm">
                 <div class="form-floating mb-2">
-                  <select class="form-select" ngModel name="team_id" required>
-                    <option selected disabled>Choose a team</option>
+                  <h5 class="mt-3">Choose a team:</h5>
+                  <select
+                    class="form-select my-3"
+                    ngModel
+                    name="team_id"
+                    required
+                  >
                     <option
                       *ngFor="let team of userTeams"
                       value="{{ team.id }}"
@@ -112,14 +119,14 @@
                 <div class="modal-footer">
                   <button
                     type="button"
-                    class="btn btn-secondary"
+                    class="btn btn-modal"
                     data-bs-dismiss="modal"
                   >
                     Close
                   </button>
                   <button
                     type="submit"
-                    class="btn btn-primary"
+                    class="btn btn-modal"
                     data-bs-dismiss="modal"
                   >
                     Add
