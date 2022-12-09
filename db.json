@@ -58,6 +58,87 @@
       "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
       "team": "1",
       "id": 9
+    },
+    {
+      "name": "bulbasaur",
+      "url": "https://pokeapi.co/api/v2/pokemon/1/",
+      "type": "grass",
+      "pokeid": 1,
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
+      "team": "1",
+      "id": 10
+    },
+    {
+      "name": "bulbasaur",
+      "url": "https://pokeapi.co/api/v2/pokemon/1/",
+      "type": "grass",
+      "pokeid": 1,
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
+      "team": "1",
+      "id": 11
+    },
+    {
+      "name": "bulbasaur",
+      "url": "https://pokeapi.co/api/v2/pokemon/1/",
+      "type": "grass",
+      "pokeid": 1,
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
+      "team": "1",
+      "id": 12
+    },
+    {
+      "name": "bulbasaur",
+      "url": "https://pokeapi.co/api/v2/pokemon/1/",
+      "type": "grass",
+      "pokeid": 1,
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
+      "team": "2",
+      "id": 13
+    },
+    {
+      "name": "kakuna",
+      "url": "https://pokeapi.co/api/v2/pokemon/14/",
+      "type": "bug",
+      "pokeid": 14,
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/14.png",
+      "team": null,
+      "id": 15
+    },
+    {
+      "name": "butterfree",
+      "url": "https://pokeapi.co/api/v2/pokemon/12/",
+      "type": "bug",
+      "pokeid": 12,
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/12.png",
+      "team": null,
+      "id": 16
+    },
+    {
+      "name": "wartortle",
+      "url": "https://pokeapi.co/api/v2/pokemon/8/",
+      "type": "water",
+      "pokeid": 8,
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/8.png",
+      "team": null,
+      "id": 17
+    },
+    {
+      "name": "wartortle",
+      "url": "https://pokeapi.co/api/v2/pokemon/8/",
+      "type": "water",
+      "pokeid": 8,
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/8.png",
+      "team": 0,
+      "id": 18
+    },
+    {
+      "name": "wartortle",
+      "url": "https://pokeapi.co/api/v2/pokemon/8/",
+      "type": "water",
+      "pokeid": 8,
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/8.png",
+      "team": 0,
+      "id": 19
     }
   ]
 }

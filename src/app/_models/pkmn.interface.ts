@@ -5,4 +5,5 @@ export interface Pkmn {
   pokeid?: number;
   type?: string;
   team?: number;
+  id?: number;
 }

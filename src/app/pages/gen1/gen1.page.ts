@@ -100,9 +100,9 @@ export class Gen1Page implements OnInit {
     });
   }
 
-  addPokemon(obj: Pkmn) {
-    console.log(this.form.value);
-    obj.team = this.form.value.id;
+  addPokemon(form_data: any, obj: Pkmn) {
+    console.log(form_data);
+    obj.team = Number(form_data.team_id);
     console.log(obj);
     this.authService
       .addPokemon(obj)

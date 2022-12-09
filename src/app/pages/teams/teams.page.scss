@@ -52,6 +52,13 @@
     }
     .card {
       color: white;
+      position: relative;
+      .rmv-pkmn {
+        font-size: 1.6rem;
+        position: absolute;
+        left: 0.5rem;
+        top: 0.3rem;
+      }
     }
     h5 {
       font-size: 1rem;

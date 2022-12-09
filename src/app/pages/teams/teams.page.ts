@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Obj } from '@popperjs/core';
 import { AuthData, AuthService } from 'src/app/auth/auth.service';
 import { Pkmn } from 'src/app/_models/pkmn.interface';
 import { Team } from 'src/app/_models/team.interface';
@@ -14,8 +15,7 @@ export class TeamsPage implements OnInit {
   loggedUser!: AuthData | null;
   teams!: Team[] | undefined;
   userTeams!: Team[] | undefined;
-  allPokemons: Pkmn[] = [];
-  userPokemons: Pkmn[] = [];
+  userPokemons!: Obj;
 
   constructor(
     private authService: AuthService,
@@ -24,8 +24,7 @@ export class TeamsPage implements OnInit {
 
   ngOnInit(): void {
     this.getLoggedUserData();
-    this.getTeams();
-    this.getPokemons();
+    this.getUserTeamsAndPokemons();
   }
 
   getLoggedUserData() {
@@ -33,25 +32,28 @@ export class TeamsPage implements OnInit {
     console.log(this.loggedUser?.user.firstname);
   }
 
-  getTeams() {
+  getUserTeamsAndPokemons() {
     this.authService.getTeams().subscribe((data) => {
       this.teams = data;
       this.userTeams = this.teams.filter(
         (team) => team.trainer === this.loggedUser?.user.id
       );
+      this.getUserPokemons();
     });
   }
 
-  getPokemons() {
+  getUserPokemons() {
+    this.userPokemons = new Object();
+
+    if (this.userTeams === undefined || this.userTeams.length === 0) {
+      return;
+    }
+
     this.authService.getUserPokemons().subscribe((data) => {
-      this.allPokemons.push(data);
-      this.userPokemons = this.allPokemons.filter((pokemon) => {
-        if (this.userTeams !== undefined) {
-          for (let index = 0; index < this.userTeams.length; index++) {
-            pokemon.team === this.userTeams[index].id;
-            console.log(this.userPokemons);
-          }
-        }
+      this.teams?.forEach((team) => {
+        this.userPokemons[`${team.id}`] = data.filter((pokemon) => {
+          return pokemon.team === team.id;
+        });
       });
     });
   }
@@ -60,12 +62,11 @@ export class TeamsPage implements OnInit {
     if (this.loggedUser?.user.id !== undefined) {
       let newTeam: Team = this.form.value;
       newTeam.trainer = this.loggedUser.user.id;
-      newTeam.pokemons = [];
       this.authService
         .addTeam(newTeam)
         .subscribe((data) => console.log('Team created!'));
     }
-    this.getTeams();
+    this.getUserTeamsAndPokemons();
   }
 
   removeTeam(obj: Team) {
@@ -79,5 +80,12 @@ export class TeamsPage implements OnInit {
     if (i !== undefined) {
       this.userTeams?.splice(i, 1);
     }
+  }
+
+  removePokemon(obj: Pkmn) {
+    this.authService.removePokemon(obj).subscribe((data) => {
+      console.log('Pokemon removed');
+      this.getUserTeamsAndPokemons();
+    });
   }
 }

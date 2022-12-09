@@ -19,7 +19,7 @@
     </div>
     <div class="d-flex flex-wrap gap-3">
       <div
-        *ngFor="let pokemon of team.pokemons"
+        *ngFor="let pokemon of userPokemons[team.id]"
         class="card"
         [ngClass]="{
                   'grass': pokemon.type === 'grass', 
@@ -44,7 +44,10 @@
         style="width: 12rem"
       >
         <div class="card-body text-center">
-          <i class="bi bi-plus-circle add-pkmn"></i>
+          <i
+            (click)="removePokemon(pokemon)"
+            class="bi bi-x-circle rmv-pkmn"
+          ></i>
           <img src="{{ pokemon.image }}" />
           <h5 class="card-title">
             <span class="pkmn-id">#{{pokemon.pokeid}}</span> {{pokemon.name |

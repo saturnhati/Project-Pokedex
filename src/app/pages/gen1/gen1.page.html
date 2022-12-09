@@ -79,7 +79,7 @@
         <!-- !Modal add to team -->
         <div
           class="modal fade"
-          id="addPokemonModal"
+          id="addPokemonModal_{{pokemon.pokeid}}"
           tabindex="-1"
           aria-labelledby="exampleModalLabel"
           aria-hidden="true"
@@ -97,9 +97,9 @@
                   aria-label="Close"
                 ></button>
               </div>
-              <form (ngSubmit)="addPokemon(pokemon)" #f="ngForm">
+              <form (ngSubmit)="addPokemon(f.value, pokemon)" #f="ngForm">
                 <div class="form-floating mb-2">
-                  <select class="form-select" ngModel name="id" required>
+                  <select class="form-select" ngModel name="team_id" required>
                     <option selected disabled>Choose a team</option>
                     <option
                       *ngFor="let team of userTeams"
@@ -134,7 +134,7 @@
           <i
             *ngIf="this.loggedUser !== null"
             data-bs-toggle="modal"
-            data-bs-target="#addPokemonModal"
+            [attr.data-bs-target]="'#addPokemonModal_'+pokemon.pokeid"
             class="bi bi-plus-circle add-pkmn"
           ></i>
           <img src="{{ pokemon.image }}" />

@@ -89,11 +89,15 @@ export class AuthService {
   // }
 
   getUserPokemons() {
-    return this.http.get<Pkmn>('http://localhost:3000/pokemons');
+    return this.http.get<Pkmn[]>('http://localhost:3000/pokemons');
   }
 
   addPokemon(obj: Pkmn) {
     return this.http.post<Pkmn>('http://localhost:3000/pokemons', obj);
+  }
+
+  removePokemon(obj: Pkmn) {
+    return this.http.delete<Pkmn>('http://localhost:3000/pokemons/' + obj.id);
   }
 
   removeTeam(id: number) {
