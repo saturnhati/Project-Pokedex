@@ -72,42 +72,58 @@
   aria-labelledby="staticBackdropLabel"
   aria-hidden="true"
 >
-  <div class="modal-dialog modal-dialog-centered">
+  <div
+    *ngIf="this.loggedUser !== undefined"
+    class="modal-dialog modal-dialog-centered"
+  >
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Add User</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">
+          Create a new team
+        </h1>
+        <i
+          aria-label="Close"
+          data-bs-dismiss="modal"
+          class="bi bi-x-lg close-icon"
+        ></i>
       </div>
-      <form class="text-center form-box" #f="ngForm" (ngSubmit)="addTeam()">
-        <div class="input-box">
-          <div class="form-floating mb-2">
-            <input
-              ngModel
-              name="title"
-              type="text"
-              class="form-control"
-              id="floatingTeamName"
-              placeholder="Team Name"
-            />
-            <label for="floatingFirstname">Team Name</label>
-          </div>
-          <div class="form-floating mb-2">
-            <input
-              ngModel
-              name="description"
-              type="text"
-              class="form-control"
-              id="floatingDescription"
-              placeholder="Description"
-            />
-            <label for="floatingDescription">Description</label>
-          </div>
+      <form (ngSubmit)="addTeam()" #f="ngForm">
+        <div class="form-floating my-3 input-div">
+          <input
+            ngModel
+            name="title"
+            type="text"
+            class="form-control"
+            id="floatingTeamName"
+            placeholder="Team Name"
+          />
+          <label for="floatingFirstname">Team Name</label>
         </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-light" data-bs-dismiss="modal">
-            Save
-          </button>
-          <button type="button" class="btn btn-light" data-bs-dismiss="modal">
+        <div class="form-floating my-3 input-div">
+          <input
+            ngModel
+            name="description"
+            type="text"
+            class="form-control"
+            id="floatingDescription"
+            placeholder="Description"
+          />
+          <label for="floatingDescription">Description</label>
+        </div>
+        <div class="modal-footer row">
+          <button
+            type="button"
+            class="btn btn-modal col"
+            data-bs-dismiss="modal"
+          >
             Close
+          </button>
+          <button
+            type="submit"
+            class="btn btn-modal col"
+            data-bs-dismiss="modal"
+          >
+            Create
           </button>
         </div>
       </form>
