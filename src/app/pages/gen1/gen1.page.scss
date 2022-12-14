@@ -94,6 +94,14 @@ li:hover {
         right: 1rem;
       }
     }
+    h6 {
+      a {
+        color: lightgreen;
+      }
+      a:hover {
+        color: rgb(121, 201, 121);
+      }
+    }
     select {
       width: 90%;
       margin: 0 auto;

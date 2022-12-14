@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Obj } from '@popperjs/core';
-import { ObservableLike } from 'rxjs';
+import { Router } from '@angular/router';
 import { AuthData, AuthService } from 'src/app/auth/auth.service';
 import { Pkmn } from 'src/app/_models/pkmn.interface';
 import { Team } from 'src/app/_models/team.interface';
@@ -22,7 +21,8 @@ export class Gen1Page implements OnInit {
 
   constructor(
     private genService: GenService,
-    private authService: AuthService
+    private authService: AuthService,
+    private route: Router
   ) {}
 
   ngOnInit(): void {
@@ -96,17 +96,20 @@ export class Gen1Page implements OnInit {
     this.authService.getTeams().subscribe((data) => {
       this.teams = data;
       this.userTeams = this.teams.filter(
-        (team) => team.trainer === this.loggedUser?.user.id && team.size < 6
+        (team) => team.trainer === this.loggedUser?.user.id
       );
     });
   }
 
   addPokemon(form_data: any, obj: Pkmn) {
     obj.team = Number(form_data.team_id);
-    this.authService
-      .addPokemon(obj)
-      .subscribe((data) => console.log('Pokemon added to team'));
-    this.increaseTeamSize(obj.team);
+    this.authService.addPokemon(obj).subscribe((data) => {
+      console.log('Pokemon added to team');
+      if (obj.team !== undefined) {
+        this.increaseTeamSize(obj.team);
+      }
+      this.getTeams();
+    });
   }
 
   increaseTeamSize(team_id: number) {
@@ -114,6 +117,7 @@ export class Gen1Page implements OnInit {
       this.authService
         .updateTeam({ size: ++data.size }, team_id)
         .subscribe((data) => console.log(data.size));
+      this.getTeams();
     });
   }
 }

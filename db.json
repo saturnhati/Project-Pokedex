@@ -22,6 +22,20 @@
       "trainer": 1,
       "size": 0,
       "id": 2
+    },
+    {
+      "title": "TEAM C",
+      "description": "my third team",
+      "trainer": 1,
+      "size": 6,
+      "id": 3
+    },
+    {
+      "title": "TEAM D",
+      "description": "my fourth team",
+      "trainer": 1,
+      "size": 0,
+      "id": 4
     }
   ],
   "pokemons": [
@@ -76,6 +90,60 @@
       "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/19.png",
       "team": 1,
       "id": 8
+    },
+    {
+      "name": "ninetales",
+      "url": "https://pokeapi.co/api/v2/pokemon/38/",
+      "type": "fire",
+      "pokeid": 38,
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/38.png",
+      "team": 3,
+      "id": 9
+    },
+    {
+      "name": "gloom",
+      "url": "https://pokeapi.co/api/v2/pokemon/44/",
+      "type": "grass",
+      "pokeid": 44,
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/44.png",
+      "team": 3,
+      "id": 10
+    },
+    {
+      "name": "zubat",
+      "url": "https://pokeapi.co/api/v2/pokemon/41/",
+      "type": "poison",
+      "pokeid": 41,
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/41.png",
+      "team": 3,
+      "id": 11
+    },
+    {
+      "name": "clefable",
+      "url": "https://pokeapi.co/api/v2/pokemon/36/",
+      "type": "fairy",
+      "pokeid": 36,
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/36.png",
+      "team": 3,
+      "id": 12
+    },
+    {
+      "name": "alakazam",
+      "url": "https://pokeapi.co/api/v2/pokemon/65/",
+      "type": "psychic",
+      "pokeid": 65,
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/65.png",
+      "team": 3,
+      "id": 14
+    },
+    {
+      "name": "caterpie",
+      "url": "https://pokeapi.co/api/v2/pokemon/10/",
+      "type": "bug",
+      "pokeid": 10,
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10.png",
+      "team": 3,
+      "id": 15
     }
   ]
 }

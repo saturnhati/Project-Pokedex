@@ -111,10 +111,19 @@
                     <option
                       *ngFor="let team of userTeams"
                       value="{{ team.id }}"
+                      [disabled]="team.size === 6 "
                     >
                       {{ team.title }}
                     </option>
                   </select>
+                  <h6 class="px-3">
+                    *a disabled team means it has already reached 6 pokemons! Go
+                    to
+                    <a data-bs-dismiss="modal" [routerLink]="['/teams']"
+                      >My Teams</a
+                    >
+                    page to remove a pokemon from it or create a new team.
+                  </h6>
                 </div>
                 <div class="modal-footer row">
                   <button
