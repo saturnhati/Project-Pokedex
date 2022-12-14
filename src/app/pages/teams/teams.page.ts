@@ -59,6 +59,7 @@ export class TeamsPage implements OnInit {
     if (this.loggedUser?.user.id !== undefined) {
       let newTeam: Team = this.form.value;
       newTeam.trainer = this.loggedUser.user.id;
+      newTeam.size = 0;
       this.authService.addTeam(newTeam).subscribe((data) => {
         console.log('Team created!');
         this.form.reset();
@@ -82,7 +83,18 @@ export class TeamsPage implements OnInit {
   removePokemon(obj: Pkmn) {
     this.authService.removePokemon(obj).subscribe((data) => {
       console.log('Pokemon removed');
+      if (obj.team !== undefined) {
+        this.decreaseTeamSize(obj.team);
+      }
       this.getUserTeamsAndPokemons();
+    });
+  }
+
+  decreaseTeamSize(team_id: number) {
+    this.authService.getTeam(team_id).subscribe((data) => {
+      this.authService
+        .updateTeam({ size: --data.size }, team_id)
+        .subscribe((data) => console.log(data.size));
     });
   }
 }

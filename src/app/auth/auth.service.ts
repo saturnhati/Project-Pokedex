@@ -80,13 +80,17 @@ export class AuthService {
     return this.http.get<Team[]>('http://localhost:3000/teams');
   }
 
+  getTeam(id: number) {
+    return this.http.get<Team>('http://localhost:3000/teams/' + id);
+  }
+
   addTeam(obj: Team) {
     return this.http.post<Team>('http://localhost:3000/teams', obj);
   }
 
-  // updateTeam(data: Partial<Team>, id: number | undefined) {
-  //   return this.http.patch<Team>('http://localhost:3000/teams/' + id, data);
-  // }
+  updateTeam(data: Partial<Team>, id: number | undefined) {
+    return this.http.patch<Team>('http://localhost:3000/teams/' + id, data);
+  }
 
   getUserPokemons() {
     return this.http.get<Pkmn[]>('http://localhost:3000/pokemons');

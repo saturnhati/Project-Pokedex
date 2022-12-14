@@ -5,4 +5,5 @@ export interface Team {
   title?: string;
   description?: string;
   trainer: number;
+  size: number;
 }
