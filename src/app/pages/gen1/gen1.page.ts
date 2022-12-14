@@ -45,9 +45,7 @@ export class Gen1Page implements OnInit {
           });
         }
       });
-      setTimeout(() => {
-        this.loading = false;
-      }, 1500);
+      this.loading = false;
     });
   }
 
