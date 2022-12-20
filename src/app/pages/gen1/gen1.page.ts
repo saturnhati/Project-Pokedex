@@ -105,8 +105,8 @@ export class Gen1Page implements OnInit {
       console.log('Pokemon added to team');
       if (obj.team !== undefined) {
         this.increaseTeamSize(obj.team);
+        this.getTeams();
       }
-      this.getTeams();
     });
   }
 
@@ -114,7 +114,9 @@ export class Gen1Page implements OnInit {
     this.authService.getTeam(team_id).subscribe((data) => {
       this.authService
         .updateTeam({ size: ++data.size }, team_id)
-        .subscribe((data) => console.log(data.size));
+        .subscribe((data) => {
+          console.log(data.size);
+        });
       this.getTeams();
     });
   }

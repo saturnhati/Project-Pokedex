@@ -17,10 +17,7 @@ export class TeamsPage implements OnInit {
   userTeams!: Team[] | undefined;
   userPokemons!: Obj;
 
-  constructor(
-    private authService: AuthService,
-    private modalService: NgbModal
-  ) {}
+  constructor(private authService: AuthService) {}
 
   ngOnInit(): void {
     this.getLoggedUserData();
