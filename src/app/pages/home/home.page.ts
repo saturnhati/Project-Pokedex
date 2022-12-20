@@ -24,6 +24,7 @@ export class HomePage implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.urlGen = this.pokemonService.getLoadedGen();
     this.getPokemons();
     this.loggedUser = this.authService.getIsLogged();
     this.getTeams();
@@ -34,6 +35,7 @@ export class HomePage implements OnInit {
   }
 
   getPokemons() {
+    this.urlGen = this.pokemonService.getLoadedGen();
     this.pokemonService.getPokemons(this.urlGen).subscribe((data) => {
       this.pokemons = data.results;
       this.pokemons?.forEach((pokemon) => {
@@ -60,35 +62,43 @@ export class HomePage implements OnInit {
   }
 
   get1() {
-    this.urlGen = '?limit=151&offset=0';
+    let newUrl = '?limit=151&offset=0';
+    this.pokemonService.updateGen(newUrl);
     this.getPokemons();
   }
   get2() {
-    this.urlGen = '?limit=100&offset=151';
+    let newUrl = '?limit=100&offset=151';
+    this.pokemonService.updateGen(newUrl);
     this.getPokemons();
   }
   get3() {
-    this.urlGen = '?limit=135&offset=251';
+    let newUrl = '?limit=135&offset=251';
+    this.pokemonService.updateGen(newUrl);
     this.getPokemons();
   }
   get4() {
-    this.urlGen = '?limit=107&offset=386';
+    let newUrl = '?limit=107&offset=386';
+    this.pokemonService.updateGen(newUrl);
     this.getPokemons();
   }
   get5() {
-    this.urlGen = '?limit=156&offset=493';
+    let newUrl = '?limit=156&offset=493';
+    this.pokemonService.updateGen(newUrl);
     this.getPokemons();
   }
   get6() {
-    this.urlGen = '?limit=72&offset=649';
+    let newUrl = '?limit=72&offset=649';
+    this.pokemonService.updateGen(newUrl);
     this.getPokemons();
   }
   get7() {
-    this.urlGen = '?limit=88&offset=721';
+    let newUrl = '?limit=88&offset=721';
+    this.pokemonService.updateGen(newUrl);
     this.getPokemons();
   }
   get8() {
-    this.urlGen = '?limit=89&offset=809';
+    let newUrl = '?limit=89&offset=809';
+    this.pokemonService.updateGen(newUrl);
     this.getPokemons();
   }
 

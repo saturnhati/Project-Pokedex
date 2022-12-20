@@ -16,6 +16,15 @@ export interface Results {
 })
 export class PokemonService {
   constructor(private http: HttpClient) {}
+  loadedGen: string = '?limit=151&offset=0';
+
+  updateGen(data: string) {
+    this.loadedGen = data;
+  }
+
+  getLoadedGen() {
+    return this.loadedGen;
+  }
 
   getPokemons(url: string) {
     return this.http.get<Results>('https://pokeapi.co/api/v2/pokemon' + url);
