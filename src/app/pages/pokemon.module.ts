@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Gen1Page } from './gen1/gen1.page';
+import { HomePage } from './home/home.page';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { PokePage } from './poke/poke.page';
 import { TeamsPage } from './teams/teams.page';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
-    path: 'gen1',
-    component: Gen1Page,
+    path: 'home',
+    component: HomePage,
   },
   {
     path: 'pokemon/:id',
@@ -19,13 +19,14 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [Gen1Page, PokePage, TeamsPage],
+  declarations: [HomePage, PokePage, TeamsPage],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
-  exports: [Gen1Page, PokePage],
+  exports: [HomePage, PokePage, TeamsPage],
 })
-export class GenModule {}
+export class PokemonModule {}

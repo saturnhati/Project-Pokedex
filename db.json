@@ -22,128 +22,71 @@
       "trainer": 1,
       "size": 0,
       "id": 2
-    },
-    {
-      "title": "TEAM C",
-      "description": "my third team",
-      "trainer": 1,
-      "size": 6,
-      "id": 3
-    },
-    {
-      "title": "TEAM D",
-      "description": "my fourth team",
-      "trainer": 1,
-      "size": 0,
-      "id": 4
     }
   ],
   "pokemons": [
     {
-      "name": "bulbasaur",
-      "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
-      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
-      "id": 1,
+      "name": "venusaur",
+      "url": "https://pokeapi.co/api/v2/pokemon/3/",
       "type": "grass",
-      "team": 1
+      "pokeid": 3,
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
+      "team": 1,
+      "id": 16
+    },
+    {
+      "name": "gengar",
+      "url": "https://pokeapi.co/api/v2/pokemon/94/",
+      "type": "ghost",
+      "pokeid": 94,
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/94.png",
+      "team": 1,
+      "id": 17
+    },
+    {
+      "name": "azumarill",
+      "url": "https://pokeapi.co/api/v2/pokemon/184/",
+      "type": "water",
+      "pokeid": 184,
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/184.png",
+      "team": 1,
+      "id": 18
+    },
+    {
+      "name": "arcanine",
+      "url": "https://pokeapi.co/api/v2/pokemon/59/",
+      "type": "fire",
+      "pokeid": 59,
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/59.png",
+      "team": 1,
+      "id": 19
+    },
+    {
+      "name": "mamoswine",
+      "url": "https://pokeapi.co/api/v2/pokemon/473/",
+      "type": "ice",
+      "pokeid": 473,
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/473.png",
+      "team": 1,
+      "id": 20
+    },
+    {
+      "name": "rhydon",
+      "url": "https://pokeapi.co/api/v2/pokemon/112/",
+      "type": "ground",
+      "pokeid": 112,
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/112.png",
+      "team": 1,
+      "id": 21
     },
     {
       "name": "charmander",
-      "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
+      "url": "https://pokeapi.co/api/v2/pokemon/4/",
+      "type": "fire",
+      "pokeid": 4,
       "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
-      "id": 4,
-      "type": "fire",
-      "team": 1
-    },
-    {
-      "name": "kakuna",
-      "url": "https://pokeapi.co/api/v2/pokemon/14/",
-      "type": "bug",
-      "pokeid": 14,
-      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/14.png",
-      "team": 1,
-      "id": 5
-    },
-    {
-      "name": "weedle",
-      "url": "https://pokeapi.co/api/v2/pokemon/13/",
-      "type": "bug",
-      "pokeid": 13,
-      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/13.png",
-      "team": 1,
-      "id": 6
-    },
-    {
-      "name": "pidgeotto",
-      "url": "https://pokeapi.co/api/v2/pokemon/17/",
-      "type": "normal",
-      "pokeid": 17,
-      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/17.png",
-      "team": 1,
-      "id": 7
-    },
-    {
-      "name": "rattata",
-      "url": "https://pokeapi.co/api/v2/pokemon/19/",
-      "type": "normal",
-      "pokeid": 19,
-      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/19.png",
-      "team": 1,
-      "id": 8
-    },
-    {
-      "name": "ninetales",
-      "url": "https://pokeapi.co/api/v2/pokemon/38/",
-      "type": "fire",
-      "pokeid": 38,
-      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/38.png",
-      "team": 3,
-      "id": 9
-    },
-    {
-      "name": "gloom",
-      "url": "https://pokeapi.co/api/v2/pokemon/44/",
-      "type": "grass",
-      "pokeid": 44,
-      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/44.png",
-      "team": 3,
-      "id": 10
-    },
-    {
-      "name": "zubat",
-      "url": "https://pokeapi.co/api/v2/pokemon/41/",
-      "type": "poison",
-      "pokeid": 41,
-      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/41.png",
-      "team": 3,
-      "id": 11
-    },
-    {
-      "name": "clefable",
-      "url": "https://pokeapi.co/api/v2/pokemon/36/",
-      "type": "fairy",
-      "pokeid": 36,
-      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/36.png",
-      "team": 3,
-      "id": 12
-    },
-    {
-      "name": "alakazam",
-      "url": "https://pokeapi.co/api/v2/pokemon/65/",
-      "type": "psychic",
-      "pokeid": 65,
-      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/65.png",
-      "team": 3,
-      "id": 14
-    },
-    {
-      "name": "caterpie",
-      "url": "https://pokeapi.co/api/v2/pokemon/10/",
-      "type": "bug",
-      "pokeid": 10,
-      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10.png",
-      "team": 3,
-      "id": 15
+      "team": 2,
+      "id": 22
     }
   ]
 }

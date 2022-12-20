@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { Gen1Page } from './pages/gen1/gen1.page';
+import { HomePage } from './pages/home/home.page';
+import { SearchPage } from './pages/search/search.page';
 import { TeamsPage } from './pages/teams/teams.page';
-import { SearchPage } from './search/search.page';
 
 const routes: Routes = [
   {
@@ -12,7 +12,7 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: Gen1Page,
+    component: HomePage,
   },
   {
     path: 'search',

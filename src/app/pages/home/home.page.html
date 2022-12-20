@@ -99,14 +99,16 @@
                   class="bi bi-x-lg close-icon"
                 ></i>
               </div>
-              <form (ngSubmit)="addPokemon(f.value, pokemon)" #f="ngForm">
+              <form
+                (ngSubmit)="addPokemon(form.value, pokemon)"
+                [formGroup]="form"
+              >
                 <div class="form-floating mb-2">
                   <h5 class="mt-3">Choose a team:</h5>
                   <select
                     class="form-select my-3"
-                    ngModel
                     name="team_id"
-                    required
+                    formControlName="team_id"
                   >
                     <option
                       *ngFor="let team of userTeams"

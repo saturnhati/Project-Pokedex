@@ -1,5 +1,11 @@
-<!-- !pokemons container -->
-<div class="main-container">
+<div *ngIf="this.loggedUser == undefined" class="main-container text-center">
+  <h4 class="mt-5 text-light">
+    PLEASE <a class="text-danger" [routerLink]="['/login']">LOGIN</a> TO MANAGE
+    YOUR TEAMS
+  </h4>
+</div>
+<!-- !container -->
+<div *ngIf="this.loggedUser !== undefined" class="main-container">
   <div class="button-container">
     <button
       type="button"

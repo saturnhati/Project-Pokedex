@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { GenService } from '../pages/gen.service';
-import { Pkmn } from '../_models/pkmn.interface';
+import { Pkmn } from 'src/app/_models/pkmn.interface';
+import { PokemonService } from '../pokemon.service';
 
 @Component({
   templateUrl: './search.page.html',
@@ -11,7 +11,7 @@ export class SearchPage implements OnInit {
   searchedPokemons!: Pkmn[] | undefined;
   pokemons!: Pkmn[] | undefined;
 
-  constructor(private genService: GenService) {}
+  constructor(private pokemonService: PokemonService) {}
 
   ngOnInit(): void {
     this.getPokemons();
@@ -19,11 +19,11 @@ export class SearchPage implements OnInit {
 
   // !fetch all pokemons and put the in an array
   getPokemons() {
-    this.genService.getPokemons(this.urlGen).subscribe((data) => {
+    this.pokemonService.getPokemons(this.urlGen).subscribe((data) => {
       this.pokemons = data.results;
       this.pokemons?.forEach((pokemon) => {
         if (pokemon.url !== undefined) {
-          this.genService.getPokemon(pokemon.url).subscribe((data) => {
+          this.pokemonService.getPokemon(pokemon.url).subscribe((data) => {
             if (data.types !== undefined) {
               pokemon.type = data.types[0]['type'].name;
             }

@@ -1,42 +1,44 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthData, AuthService } from 'src/app/auth/auth.service';
 import { Pkmn } from 'src/app/_models/pkmn.interface';
 import { Team } from 'src/app/_models/team.interface';
-import { GenService } from '../gen.service';
+import { PokemonService } from '../pokemon.service';
 
 @Component({
-  templateUrl: './gen1.page.html',
-  styleUrls: ['./gen1.page.scss'],
+  templateUrl: './home.page.html',
+  styleUrls: ['./home.page.scss'],
 })
-export class Gen1Page implements OnInit {
+export class HomePage implements OnInit {
   urlGen: string = '?limit=151&offset=0';
   pokemons!: Pkmn[] | undefined;
   loading: boolean = true;
   loggedUser!: AuthData | null;
   teams!: Team[] | undefined;
   userTeams!: Team[] | undefined;
-  @ViewChild('f') form!: NgForm;
+  form!: FormGroup;
 
   constructor(
-    private genService: GenService,
-    private authService: AuthService,
-    private route: Router
+    private pokemonService: PokemonService,
+    private authService: AuthService
   ) {}
 
   ngOnInit(): void {
     this.getPokemons();
     this.loggedUser = this.authService.getIsLogged();
     this.getTeams();
+    // form in modal
+    this.form = new FormGroup({
+      team_id: new FormControl([Validators.required]),
+    });
   }
 
   getPokemons() {
-    this.genService.getPokemons(this.urlGen).subscribe((data) => {
+    this.pokemonService.getPokemons(this.urlGen).subscribe((data) => {
       this.pokemons = data.results;
       this.pokemons?.forEach((pokemon) => {
         if (pokemon.url !== undefined) {
-          this.genService.getPokemon(pokemon.url).subscribe((data) => {
+          this.pokemonService.getPokemon(pokemon.url).subscribe((data) => {
             if (data.types !== undefined) {
               pokemon.type = data.types[0]['type'].name;
             }
@@ -91,7 +93,7 @@ export class Gen1Page implements OnInit {
   }
 
   getTeams() {
-    this.authService.getTeams().subscribe((data) => {
+    this.pokemonService.getTeams().subscribe((data) => {
       this.teams = data;
       this.userTeams = this.teams.filter(
         (team) => team.trainer === this.loggedUser?.user.id
@@ -101,18 +103,19 @@ export class Gen1Page implements OnInit {
 
   addPokemon(form_data: any, obj: Pkmn) {
     obj.team = Number(form_data.team_id);
-    this.authService.addPokemon(obj).subscribe((data) => {
+    this.pokemonService.addPokemon(obj).subscribe((data) => {
       console.log('Pokemon added to team');
       if (obj.team !== undefined) {
         this.increaseTeamSize(obj.team);
         this.getTeams();
+        window.location.reload();
       }
     });
   }
 
   increaseTeamSize(team_id: number) {
-    this.authService.getTeam(team_id).subscribe((data) => {
-      this.authService
+    this.pokemonService.getTeam(team_id).subscribe((data) => {
+      this.pokemonService
         .updateTeam({ size: ++data.size }, team_id)
         .subscribe((data) => {
           console.log(data.size);

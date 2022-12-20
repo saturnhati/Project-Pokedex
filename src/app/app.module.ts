@@ -4,10 +4,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeaderComponent } from './header/header.component';
-import { GenModule } from './pages/gen.module';
+import { PokemonModule } from './pages/pokemon.module';
 import { AuthModule } from './auth/auth.module';
-import { FormsModule } from '@angular/forms';
-import { SearchPage } from './search/search.page';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SearchPage } from './pages/search/search.page';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, SearchPage],
@@ -16,8 +16,9 @@ import { SearchPage } from './search/search.page';
     AppRoutingModule,
     NgbModule,
     FormsModule,
-    GenModule,
+    PokemonModule,
     AuthModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

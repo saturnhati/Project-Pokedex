@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { filter, tap } from 'rxjs/operators';
+import { tap } from 'rxjs/operators';
 import { User } from './user.interface';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Router } from '@angular/router';
@@ -72,40 +72,36 @@ export class AuthService {
     return this.isLogged;
   }
 
-  updateUser(data: Partial<User>, id: number | undefined) {
-    return this.http.patch<Team>('http://localhost:3000/users' + id, data);
-  }
+  // getTeams() {
+  //   return this.http.get<Team[]>('http://localhost:3000/teams');
+  // }
 
-  getTeams() {
-    return this.http.get<Team[]>('http://localhost:3000/teams');
-  }
+  // getTeam(id: number) {
+  //   return this.http.get<Team>('http://localhost:3000/teams/' + id);
+  // }
 
-  getTeam(id: number) {
-    return this.http.get<Team>('http://localhost:3000/teams/' + id);
-  }
+  // addTeam(obj: Team) {
+  //   return this.http.post<Team>('http://localhost:3000/teams', obj);
+  // }
 
-  addTeam(obj: Team) {
-    return this.http.post<Team>('http://localhost:3000/teams', obj);
-  }
+  // updateTeam(data: Partial<Team>, id: number | undefined) {
+  //   return this.http.patch<Team>('http://localhost:3000/teams/' + id, data);
+  // }
 
-  updateTeam(data: Partial<Team>, id: number | undefined) {
-    return this.http.patch<Team>('http://localhost:3000/teams/' + id, data);
-  }
+  // getUserPokemons() {
+  //   return this.http.get<Pkmn[]>('http://localhost:3000/pokemons');
+  // }
 
-  getUserPokemons() {
-    return this.http.get<Pkmn[]>('http://localhost:3000/pokemons');
-  }
+  // addPokemon(obj: Pkmn) {
+  //   return this.http.post<Pkmn>('http://localhost:3000/pokemons', obj);
+  // }
 
-  addPokemon(obj: Pkmn) {
-    return this.http.post<Pkmn>('http://localhost:3000/pokemons', obj);
-  }
+  // removePokemon(obj: Pkmn) {
+  //   return this.http.delete<Pkmn>('http://localhost:3000/pokemons/' + obj.id);
+  // }
 
-  removePokemon(obj: Pkmn) {
-    return this.http.delete<Pkmn>('http://localhost:3000/pokemons/' + obj.id);
-  }
-
-  removeTeam(id: number) {
-    console.log('remove - 2');
-    return this.http.delete('http://localhost:3000/teams/' + id);
-  }
+  // removeTeam(id: number) {
+  //   console.log('remove - 2');
+  //   return this.http.delete('http://localhost:3000/teams/' + id);
+  // }
 }

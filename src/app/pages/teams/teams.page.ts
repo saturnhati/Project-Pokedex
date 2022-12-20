@@ -1,10 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Obj } from '@popperjs/core';
 import { AuthData, AuthService } from 'src/app/auth/auth.service';
 import { Pkmn } from 'src/app/_models/pkmn.interface';
 import { Team } from 'src/app/_models/team.interface';
+import { PokemonService } from '../pokemon.service';
 
 @Component({
   templateUrl: './teams.page.html',
@@ -17,7 +17,10 @@ export class TeamsPage implements OnInit {
   userTeams!: Team[] | undefined;
   userPokemons!: Obj;
 
-  constructor(private authService: AuthService) {}
+  constructor(
+    private authService: AuthService,
+    private pokemonService: PokemonService
+  ) {}
 
   ngOnInit(): void {
     this.getLoggedUserData();
@@ -29,7 +32,7 @@ export class TeamsPage implements OnInit {
   }
 
   getUserTeamsAndPokemons() {
-    this.authService.getTeams().subscribe((data) => {
+    this.pokemonService.getTeams().subscribe((data) => {
       this.teams = data;
       this.userTeams = this.teams.filter(
         (team) => team.trainer === this.loggedUser?.user.id
@@ -43,7 +46,7 @@ export class TeamsPage implements OnInit {
     if (this.userTeams === undefined || this.userTeams.length === 0) {
       return;
     }
-    this.authService.getUserPokemons().subscribe((data) => {
+    this.pokemonService.getUserPokemons().subscribe((data) => {
       this.teams?.forEach((team) => {
         this.userPokemons[`${team.id}`] = data.filter((pokemon) => {
           return pokemon.team === team.id;
@@ -57,7 +60,7 @@ export class TeamsPage implements OnInit {
       let newTeam: Team = this.form.value;
       newTeam.trainer = this.loggedUser.user.id;
       newTeam.size = 0;
-      this.authService.addTeam(newTeam).subscribe((data) => {
+      this.pokemonService.addTeam(newTeam).subscribe((data) => {
         console.log('Team created!');
         this.form.reset();
         this.getUserTeamsAndPokemons();
@@ -67,7 +70,7 @@ export class TeamsPage implements OnInit {
 
   removeTeam(obj: Team) {
     if (obj.id !== undefined) {
-      this.authService
+      this.pokemonService
         .removeTeam(obj.id)
         .subscribe((data) => console.log('Team removed!'));
     }
@@ -78,7 +81,7 @@ export class TeamsPage implements OnInit {
   }
 
   removePokemon(obj: Pkmn) {
-    this.authService.removePokemon(obj).subscribe((data) => {
+    this.pokemonService.removePokemon(obj).subscribe((data) => {
       console.log('Pokemon removed');
       if (obj.team !== undefined) {
         this.decreaseTeamSize(obj.team);
@@ -88,8 +91,8 @@ export class TeamsPage implements OnInit {
   }
 
   decreaseTeamSize(team_id: number) {
-    this.authService.getTeam(team_id).subscribe((data) => {
-      this.authService
+    this.pokemonService.getTeam(team_id).subscribe((data) => {
+      this.pokemonService
         .updateTeam({ size: --data.size }, team_id)
         .subscribe((data) => console.log(data.size));
     });
