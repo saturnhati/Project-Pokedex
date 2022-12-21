@@ -69,6 +69,17 @@ export class TeamsPage implements OnInit {
   }
 
   removeTeam(obj: Team) {
+    this.pokemonService.getUserPokemons().subscribe((data) => {
+      let thisTeam: Pkmn[] = data.filter((pokemon) => {
+        pokemon.team == obj.id;
+      });
+      console.log(thisTeam);
+      thisTeam.forEach((pokemon) => {
+        this.pokemonService
+          .removePokemon(pokemon)
+          .subscribe((data) => console.log('Removed pokemon'));
+      });
+    });
     if (obj.id !== undefined) {
       this.pokemonService
         .removeTeam(obj.id)

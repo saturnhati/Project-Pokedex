@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "email": "gaia@filippi.it",
+      "email": "filippi.gaia@gmail.com",
       "password": "$2a$10$593.HyGiH6VC/dqfIRg3NuzAPdFzinfLw6OnZCKsPbZ6V0GHC0Ztu",
       "firstname": "Gaia",
       "lastname": "Filippi",
@@ -15,13 +15,6 @@
       "description": "my first team",
       "trainer": 1,
       "size": 6
-    },
-    {
-      "title": "TEAM B",
-      "description": "my second team",
-      "trainer": 1,
-      "size": 0,
-      "id": 2
     }
   ],
   "pokemons": [
@@ -32,7 +25,7 @@
       "pokeid": 3,
       "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
       "team": 1,
-      "id": 16
+      "id": 1
     },
     {
       "name": "gengar",
@@ -41,7 +34,7 @@
       "pokeid": 94,
       "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/94.png",
       "team": 1,
-      "id": 17
+      "id": 2
     },
     {
       "name": "azumarill",
@@ -50,7 +43,7 @@
       "pokeid": 184,
       "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/184.png",
       "team": 1,
-      "id": 18
+      "id": 3
     },
     {
       "name": "arcanine",
@@ -59,7 +52,7 @@
       "pokeid": 59,
       "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/59.png",
       "team": 1,
-      "id": 19
+      "id": 4
     },
     {
       "name": "mamoswine",
@@ -68,7 +61,7 @@
       "pokeid": 473,
       "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/473.png",
       "team": 1,
-      "id": 20
+      "id": 5
     },
     {
       "name": "rhydon",
@@ -77,16 +70,7 @@
       "pokeid": 112,
       "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/112.png",
       "team": 1,
-      "id": 21
-    },
-    {
-      "name": "charmander",
-      "url": "https://pokeapi.co/api/v2/pokemon/4/",
-      "type": "fire",
-      "pokeid": 4,
-      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
-      "team": 2,
-      "id": 22
+      "id": 6
     }
   ]
 }

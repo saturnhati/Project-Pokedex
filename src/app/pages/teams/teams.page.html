@@ -5,9 +5,13 @@
   </h4>
 </div>
 <!-- !container -->
-<div *ngIf="this.loggedUser !== undefined" class="main-container">
+<div
+  *ngIf="this.loggedUser !== undefined || this.loggedUser !== null"
+  class="main-container"
+>
   <div class="button-container">
     <button
+      [hidden]="this.loggedUser == undefined || this.loggedUser == null"
       type="button"
       class="btn-new"
       data-bs-toggle="modal"
@@ -136,3 +140,4 @@
     </div>
   </div>
 </div>
+<!-- !modal end -->
