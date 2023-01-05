@@ -1,0 +1,108 @@
+{
+  "users": [
+    {
+      "email": "filippi.gaia@gmail.com",
+      "password": "$2a$10$593.HyGiH6VC/dqfIRg3NuzAPdFzinfLw6OnZCKsPbZ6V0GHC0Ztu",
+      "firstname": "Gaia",
+      "lastname": "Filippi",
+      "id": 1
+    }
+  ],
+  "teams": [
+    {
+      "id": 1,
+      "title": "TEAM A",
+      "description": "my first team",
+      "trainer": 1,
+      "size": 6
+    },
+    {
+      "title": "TEAM C ",
+      "description": "oidfhiojh",
+      "trainer": 1,
+      "size": 0,
+      "id": 3
+    },
+    {
+      "title": "GEPPETTO",
+      "description": "jkuhiuh",
+      "trainer": 1,
+      "size": 0,
+      "id": 4
+    }
+  ],
+  "pokemons": [
+    {
+      "name": "venusaur",
+      "url": "https://pokeapi.co/api/v2/pokemon/3/",
+      "type": "grass",
+      "pokeid": 3,
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
+      "team": 1,
+      "id": 1
+    },
+    {
+      "name": "gengar",
+      "url": "https://pokeapi.co/api/v2/pokemon/94/",
+      "type": "ghost",
+      "pokeid": 94,
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/94.png",
+      "team": 1,
+      "id": 2
+    },
+    {
+      "name": "azumarill",
+      "url": "https://pokeapi.co/api/v2/pokemon/184/",
+      "type": "water",
+      "pokeid": 184,
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/184.png",
+      "team": 1,
+      "id": 3
+    },
+    {
+      "name": "arcanine",
+      "url": "https://pokeapi.co/api/v2/pokemon/59/",
+      "type": "fire",
+      "pokeid": 59,
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/59.png",
+      "team": 1,
+      "id": 4
+    },
+    {
+      "name": "mamoswine",
+      "url": "https://pokeapi.co/api/v2/pokemon/473/",
+      "type": "ice",
+      "pokeid": 473,
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/473.png",
+      "team": 1,
+      "id": 5
+    },
+    {
+      "name": "rhydon",
+      "url": "https://pokeapi.co/api/v2/pokemon/112/",
+      "type": "ground",
+      "pokeid": 112,
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/112.png",
+      "team": 1,
+      "id": 6
+    },
+    {
+      "name": "blastoise",
+      "url": "https://pokeapi.co/api/v2/pokemon/9/",
+      "type": "water",
+      "pokeid": 9,
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/9.png",
+      "team": 2,
+      "id": 7
+    },
+    {
+      "name": "pidgeot",
+      "url": "https://pokeapi.co/api/v2/pokemon/18/",
+      "type": "normal",
+      "pokeid": 18,
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/18.png",
+      "team": 2,
+      "id": 8
+    }
+  ]
+}

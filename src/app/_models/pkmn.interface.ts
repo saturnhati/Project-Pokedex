@@ -4,6 +4,6 @@ export interface Pkmn {
   image?: string;
   pokeid?: number;
   type?: string;
-  team?: number;
+  team?: string;
   id?: number;
 }

@@ -1,7 +1,7 @@
 import { Pkmn } from './pkmn.interface';
 
 export interface Team {
-  id: number;
+  id: string;
   title?: string;
   description?: string;
   trainer: number;

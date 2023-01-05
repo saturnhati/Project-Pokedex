@@ -112,7 +112,7 @@ export class HomePage implements OnInit {
   }
 
   addPokemon(form_data: any, obj: Pkmn) {
-    obj.team = Number(form_data.team_id);
+    obj.team = form_data.team_id;
     this.pokemonService.addPokemon(obj).subscribe((data) => {
       console.log('Pokemon added to team');
       if (obj.team !== undefined) {
@@ -123,7 +123,7 @@ export class HomePage implements OnInit {
     });
   }
 
-  increaseTeamSize(team_id: number) {
+  increaseTeamSize(team_id: string) {
     this.pokemonService.getTeam(team_id).subscribe((data) => {
       this.pokemonService
         .updateTeam({ size: ++data.size }, team_id)

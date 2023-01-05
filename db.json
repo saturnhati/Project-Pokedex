@@ -8,69 +8,79 @@
       "id": 1
     }
   ],
-  "teams": [
-    {
-      "id": 1,
-      "title": "TEAM A",
-      "description": "my first team",
-      "trainer": 1,
-      "size": 6
-    }
-  ],
+  "teams": [],
   "pokemons": [
     {
-      "name": "venusaur",
-      "url": "https://pokeapi.co/api/v2/pokemon/3/",
-      "type": "grass",
-      "pokeid": 3,
-      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
-      "team": 1,
+      "name": "charizard",
+      "url": "https://pokeapi.co/api/v2/pokemon/6/",
+      "type": "fire",
+      "pokeid": 6,
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png",
+      "team": "ef3cb86f-8140-4d4d-9396-7c7f53ac3979",
       "id": 1
     },
     {
-      "name": "gengar",
-      "url": "https://pokeapi.co/api/v2/pokemon/94/",
-      "type": "ghost",
-      "pokeid": 94,
-      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/94.png",
-      "team": 1,
+      "name": "beedrill",
+      "url": "https://pokeapi.co/api/v2/pokemon/15/",
+      "type": "bug",
+      "pokeid": 15,
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/15.png",
+      "team": "ef3cb86f-8140-4d4d-9396-7c7f53ac3979",
       "id": 2
     },
     {
-      "name": "azumarill",
-      "url": "https://pokeapi.co/api/v2/pokemon/184/",
-      "type": "water",
-      "pokeid": 184,
-      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/184.png",
-      "team": 1,
+      "name": "butterfree",
+      "url": "https://pokeapi.co/api/v2/pokemon/12/",
+      "type": "bug",
+      "pokeid": 12,
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/12.png",
+      "team": "ef3cb86f-8140-4d4d-9396-7c7f53ac3979",
       "id": 3
     },
     {
-      "name": "arcanine",
-      "url": "https://pokeapi.co/api/v2/pokemon/59/",
-      "type": "fire",
-      "pokeid": 59,
-      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/59.png",
-      "team": 1,
+      "name": "weedle",
+      "url": "https://pokeapi.co/api/v2/pokemon/13/",
+      "type": "bug",
+      "pokeid": 13,
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/13.png",
+      "team": "b012376d-6ea2-4d81-baad-24b2dadde20b",
       "id": 4
     },
     {
-      "name": "mamoswine",
-      "url": "https://pokeapi.co/api/v2/pokemon/473/",
-      "type": "ice",
-      "pokeid": 473,
-      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/473.png",
-      "team": 1,
+      "name": "charmeleon",
+      "url": "https://pokeapi.co/api/v2/pokemon/5/",
+      "type": "fire",
+      "pokeid": 5,
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png",
+      "team": "f2b8ba91-3a47-4fdd-8b47-73075162e371",
       "id": 5
     },
     {
-      "name": "rhydon",
-      "url": "https://pokeapi.co/api/v2/pokemon/112/",
-      "type": "ground",
-      "pokeid": 112,
-      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/112.png",
-      "team": 1,
+      "name": "metapod",
+      "url": "https://pokeapi.co/api/v2/pokemon/11/",
+      "type": "bug",
+      "pokeid": 11,
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/11.png",
+      "team": "f2b8ba91-3a47-4fdd-8b47-73075162e371",
       "id": 6
+    },
+    {
+      "name": "ivysaur",
+      "url": "https://pokeapi.co/api/v2/pokemon/2/",
+      "type": "grass",
+      "pokeid": 2,
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png",
+      "team": "61ec649a-e7e9-4fc4-80f9-0350cd388d16",
+      "id": 7
+    },
+    {
+      "name": "charizard",
+      "url": "https://pokeapi.co/api/v2/pokemon/6/",
+      "type": "fire",
+      "pokeid": 6,
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png",
+      "team": "55dc71d8-681a-4ae4-b7c9-f662fb055351",
+      "id": 8
     }
   ]
 }

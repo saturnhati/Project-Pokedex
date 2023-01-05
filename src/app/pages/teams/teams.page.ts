@@ -60,6 +60,7 @@ export class TeamsPage implements OnInit {
       let newTeam: Team = this.form.value;
       newTeam.trainer = this.loggedUser.user.id;
       newTeam.size = 0;
+      newTeam.id = crypto.randomUUID();
       this.pokemonService.addTeam(newTeam).subscribe((data) => {
         console.log('Team created!');
         this.form.reset();
@@ -69,10 +70,9 @@ export class TeamsPage implements OnInit {
   }
 
   removeTeam(obj: Team) {
+    let thisTeam: Pkmn[];
     this.pokemonService.getUserPokemons().subscribe((data) => {
-      let thisTeam: Pkmn[] = data.filter((pokemon) => {
-        pokemon.team == obj.id;
-      });
+      thisTeam = data.filter((pokemon) => pokemon.team == obj.id);
       console.log(thisTeam);
       thisTeam.forEach((pokemon) => {
         this.pokemonService
@@ -101,7 +101,7 @@ export class TeamsPage implements OnInit {
     });
   }
 
-  decreaseTeamSize(team_id: number) {
+  decreaseTeamSize(team_id: string) {
     this.pokemonService.getTeam(team_id).subscribe((data) => {
       this.pokemonService
         .updateTeam({ size: --data.size }, team_id)

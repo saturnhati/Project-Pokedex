@@ -42,7 +42,7 @@ export class PokemonService {
     return this.http.get<Team[]>('http://localhost:3000/teams');
   }
 
-  getTeam(id: number) {
+  getTeam(id: string) {
     return this.http.get<Team>('http://localhost:3000/teams/' + id);
   }
 
@@ -50,7 +50,7 @@ export class PokemonService {
     return this.http.post<Team>('http://localhost:3000/teams', obj);
   }
 
-  updateTeam(data: Partial<Team>, id: number | undefined) {
+  updateTeam(data: Partial<Team>, id: string | undefined) {
     return this.http.patch<Team>('http://localhost:3000/teams/' + id, data);
   }
 
@@ -66,7 +66,7 @@ export class PokemonService {
     return this.http.delete<Pkmn>('http://localhost:3000/pokemons/' + obj.id);
   }
 
-  removeTeam(id: number) {
+  removeTeam(id: string) {
     console.log('remove - 2');
     return this.http.delete('http://localhost:3000/teams/' + id);
   }
