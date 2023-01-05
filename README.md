@@ -1,6 +1,6 @@
 # CapstoneProject
 
-This project is a Pokédex realized with Angular CLI using the API PokéAPI.
+This project is a Pokédex realized with Angular CLI (version 14.2.7) using the API PokéAPI.
 
 Screenshots:
 
@@ -27,8 +27,6 @@ Screenshots:
 ![Screenshot6](./src/assets/images/SCREENSHOT_6.png)
 
 ---
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.7.
 
 ## Development server
 
