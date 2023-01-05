@@ -4,11 +4,26 @@ This project is a Pokédex realized with Angular CLI using the API PokéAPI.
 
 Screenshots:
 
-![Screenshot1](./src/assets/images/SCREENSHOT_1.png)  
-![Screenshot2](./src/assets/images/SCREENSHOT_2.png)  
-![Screenshot3](./src/assets/images/SCREENSHOT_3.png)  
-![Screenshot4](./src/assets/images/SCREENSHOT_4.png)  
-![Screenshot5](./src/assets/images/SCREENSHOT_5.png)  
+![Screenshot1](./src/assets/images/SCREENSHOT_1.png)
+
+---
+
+![Screenshot2](./src/assets/images/SCREENSHOT_2.png)
+
+---
+
+![Screenshot3](./src/assets/images/SCREENSHOT_3.png)
+
+---
+
+![Screenshot4](./src/assets/images/SCREENSHOT_4.png)
+
+---
+
+![Screenshot5](./src/assets/images/SCREENSHOT_5.png)
+
+---
+
 ![Screenshot6](./src/assets/images/SCREENSHOT_6.png)
 
 ---
