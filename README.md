@@ -1,4 +1,4 @@
-# CapstoneProject - POKEDEX
+# PokédexProject
 
 This project is a Pokédex realized with Angular CLI (version 14.2.7) using the API PokéAPI.
 
