@@ -8,7 +8,22 @@
       "id": 1
     }
   ],
-  "teams": [],
+  "teams": [
+    {
+      "title": "TEAM A",
+      "description": "my first team",
+      "trainer": 1,
+      "size": 0,
+      "id": "90c0deea-b061-400b-9544-86ea57a83116"
+    },
+    {
+      "title": "TEAM B",
+      "description": "my second team",
+      "trainer": 1,
+      "size": 0,
+      "id": "3f0bb61f-abe4-4220-8ef5-e9f2cd1b51f2"
+    }
+  ],
   "pokemons": [
     {
       "name": "charizard",
@@ -81,6 +96,60 @@
       "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png",
       "team": "55dc71d8-681a-4ae4-b7c9-f662fb055351",
       "id": 8
+    },
+    {
+      "name": "bulbasaur",
+      "url": "https://pokeapi.co/api/v2/pokemon/1/",
+      "type": "grass",
+      "pokeid": 1,
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
+      "team": "90c0deea-b061-400b-9544-86ea57a83116",
+      "id": 9
+    },
+    {
+      "name": "ivysaur",
+      "url": "https://pokeapi.co/api/v2/pokemon/2/",
+      "type": "grass",
+      "pokeid": 2,
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png",
+      "team": "90c0deea-b061-400b-9544-86ea57a83116",
+      "id": 10
+    },
+    {
+      "name": "venusaur",
+      "url": "https://pokeapi.co/api/v2/pokemon/3/",
+      "type": "grass",
+      "pokeid": 3,
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
+      "team": "90c0deea-b061-400b-9544-86ea57a83116",
+      "id": 11
+    },
+    {
+      "name": "charmander",
+      "url": "https://pokeapi.co/api/v2/pokemon/4/",
+      "type": "fire",
+      "pokeid": 4,
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
+      "team": "3f0bb61f-abe4-4220-8ef5-e9f2cd1b51f2",
+      "id": 12
+    },
+    {
+      "name": "charmeleon",
+      "url": "https://pokeapi.co/api/v2/pokemon/5/",
+      "type": "fire",
+      "pokeid": 5,
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png",
+      "team": "3f0bb61f-abe4-4220-8ef5-e9f2cd1b51f2",
+      "id": 13
+    },
+    {
+      "name": "charizard",
+      "url": "https://pokeapi.co/api/v2/pokemon/6/",
+      "type": "fire",
+      "pokeid": 6,
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png",
+      "team": "3f0bb61f-abe4-4220-8ef5-e9f2cd1b51f2",
+      "id": 14
     }
   ]
 }
